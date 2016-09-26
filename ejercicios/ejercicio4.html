@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 3</title>
+	<style>
+		#barra{
+			height:50px;		
+		}
+	</style>
+	<script type="text/javascript">
+		//iniciar variables
+		var contador;
+		var intervalo;
+
+		function enviar(){
+			clearInterval(intervalo);
+			contador = 1;
+			intervalo=setInterval("pintar()", document.getElementById("tiempoPixel").value);
+		}
+
+		function pintar(){
+			contador++;
+			document.getElementById("barra").style.background = document.getElementById("color").value;
+			document.getElementById("procesando").innerHTML = contador;
+			document.getElementById("barra").style.width = contador + "px";
+
+			if (contador == document.getElementById("longitud").value) {
+				clearInterval(intervalo);
+			};
+		}
+	</script>
+</head>
+<body>
+	<div style="margin-left:40%; text-align:center">
+		<table>
+			<thead>
+				<tr>
+					<th><h3>BARRA DESPLAZAMIENTO:</h3></th>
+				</tr>
+				<tr>
+					<th><hr style="border:3px solid red" /></th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td><button id="envio" onclick="enviar()"/>Enviar Datos</td>
+				</tr>
+				<tr>
+					<td><h3>Procesando datos: </h3><div id="procesando"></div></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td><h3>Longitud: <input type="text" id="longitud"/></h3></td>
+				</tr>
+				<tr>
+					<td><h3>Tiempo/pixel: <input type="text" id="tiempoPixel" /></h3></td>
+				</tr>
+				<tr>
+					<td><h3>Color: <input type="text" id="color"><div></h3></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="barra"></div>
+	</div>
+    <hr style="border:3px solid red" />
+</body>
+</html>

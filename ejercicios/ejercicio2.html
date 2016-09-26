@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2</title>
+	<script type="text/javascript">
+		//variable inicial de la cuenta
+		//var numero;
+
+        function iniciar(){
+            var cuenta = document.getElementById("segundos").value;
+
+            var intervalo = setInterval(function(){
+                //mientras que cuenta sea mayor a 0 cambia el texto de la capa miCuenta
+                if(cuenta > 1){
+                    cuenta--;
+                    document.getElementById("cuenta").innerHTML = cuenta;
+                }else if(cuenta <= 1){
+                    //clearInterval(intervalo);
+                    document.getElementById("cuenta").innerHTML = "Cuenta finalizada!";
+                }
+            },1000);
+        }
+	</script>
+</head>
+<body>
+    <p>Introduce un número: </p>
+    <input type="number" id="segundos"/>
+    <input type="button" id="Ok" value="OK" onclick="iniciar()"/>
+    <div id="cuenta"></div>
+</body>
+</html>
