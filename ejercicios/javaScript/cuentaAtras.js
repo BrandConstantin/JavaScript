@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Ejercicio 1</title>
-	<script type="text/javascript">
 		//variable inicial de la cuenta
 		var cuenta = 10;
 		var intervalo = setInterval(function(){
@@ -16,9 +10,3 @@
 				document.getElementById("miCuenta").innerHTML = "Moises el más feo de la clase!";
 			}
 		},1000);
-	</script>
-</head>
-<body>
-<div id="miCuenta">10</div>
-</body>
-</html>

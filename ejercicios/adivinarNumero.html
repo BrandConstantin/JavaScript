@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 3</title>
+	<script type="text/javascript" src="javaScript/adivinarNumero.js">
+	</script>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th><h3>La cuenta atras empieza al pulsar OK (tienes 15 segundos para adivinar el número):</h3></th>
+			</tr>
+			<tr>
+				<th><hr style="border:3px solid black" /></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<td><h3>Intentos: </h3><div id="intentos"></div></td>
+			<td><h3>Mensaje: </h3><div id="mensaje"></div></td>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td><h3>Inicia la cuenta atras: </h3><input type="button" id="start" value="START" onclick="iniciar()" /></td>
+				<td><h3>Tiempo Restante: <div id="tiempoRestante"><div></h3></td>
+			</tr>
+			<tr>
+				<td><h3>Introduce número aqui: </h3><input type="text" id="numeroIntrod" /></td>
+				<td><h3>Comprobar: </h3><button id="Comprueba" onclick="comprobarNumero()">Comprueba</td>
+			</tr>
+		</tbody>
+	</table>
+    <hr style="border:3px solid black" />
+</body>
+</html>

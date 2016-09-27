@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Ejercicio 2</title>
-	<script type="text/javascript">
 		//variable inicial de la cuenta
 		//var numero;
 
@@ -21,12 +15,3 @@
                 }
             },1000);
         }
-	</script>
-</head>
-<body>
-    <p>Introduce un número: </p>
-    <input type="number" id="segundos"/>
-    <input type="button" id="Ok" value="OK" onclick="iniciar()"/>
-    <div id="cuenta"></div>
-</body>
-</html>
