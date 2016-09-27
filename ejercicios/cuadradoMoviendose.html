@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: blue;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;
+  border-radius: 100%;
+}
+</style>
+<body>
+
+<p>
+<button onclick="miMovimiento()">Pinchame</button>
+</p>
+
+<div id ="container">
+<div id ="animate"></div>
+</div>
+
+<script>
+function miMovimiento() {
+  var elem = document.getElementById("animate");
+  var id = setInterval(mover, 15);
+  var a = 0;
+  var b = 0;
+
+  function mover() {
+    if ((a == 0) && (b == 1)) {
+      clearInterval(id);
+    } else if((a < 350) && (b == 0)){
+      a++;
+      elem.style.left = a + 'px';
+    } else if((a == 350) && (b < 350)){
+      b++;
+      elem.style.top = b + 'px';
+    } else if((a > 0) && (b == 350)){
+      a--;
+      elem.style.left = a + 'px';
+    }else if((a == 0) && (b > 0)){
+      b--;
+      elem.style.top = b + 'px';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
