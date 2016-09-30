@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head> 
+	 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+ 	</head>
+<body>
+
+<p>Ejemplo 5</p>
+
+<div id="main">
+<p>El DOM es muy importante.</p>
+<p>Este ejemplo demuestra el poder del método <b>getElementsByTagName</b>.</p>
+</div>
+
+<p id="practica"></p>
+
+<script>
+var x = document.getElementById("main");
+var y = x.getElementsByTagName("p");
+
+document.getElementById("practica").innerHTML = 
+'El primer paragrafo (indexado 0) dentro de "main" es: ' + y[0].innerHTML;
+</script>
+
+</body>
+</html>

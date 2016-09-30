@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  </head>
+<script>
+function miFuncion() {
+    var x = document.getElementById("nombre");
+    x.value = x.value.toUpperCase();
+}
+</script>
+</head>
+<body>
+
+Escribe tu nombre: <input type="text" id="nombre" onchange="miFuncion()">
+<p>Transforma las minusculas en mayusculas</p>
+
+</body>
+</html>
