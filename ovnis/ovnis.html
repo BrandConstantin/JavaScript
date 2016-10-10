@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Invazión Ovni</title>
+<style>
+    #contenedor{
+        background-image: url("img/montania.jpeg");
+        background-size: 1190px 680px;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        width: 1190px;
+        height: 680px;
+        border: 2px solid red;
+    }
+
+
+    #botones {
+        float: right; 
+        margin: 10px;
+    }
+
+    span{
+        float: left;
+    }
+
+    #contenedor h3{
+        font-family: sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    #clear{
+        clear: both;
+    }
+
+    #ovni{
+        top:150px;
+        left:10px;
+        width:200px;
+        height:200px;   
+        
+        background-size: 200px 200px;
+        position:absolute;
+    }
+
+    .bombas {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        position: absolute;
+    }
+
+/*
+    .arbol {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+    }    */
+</style>
+<script src="ovnis.js"></script>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="botones">
+            <button id="comienza" onclick="comienza()">EMPEZAR JUEGO</button>
+            <button id="lanzar" onclick="lanzar()">LANZAR BOMBAS</button>
+        </div>
+        <h3>
+            Nivel: <span id="numNivel"></span><br>
+            Bombas: <span id="numBombas"></span><br>
+            Mensaje: <span id="mensaje"></span>
+        </h3>
+        <div id="clear"></div>
+        <div class="bombas"></div>  
+        <div class="arboles"></div>
+    </div>
+</body>
+</html>
