@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Uso de ventanas padre-hijo</title>
+		<meta charset="utf-8">
+	<script type="text/javascript" src="ventanaHija.js">
+	</script>
+	</head>
+	<body>
+		<p>Calendario</p>
+		<table summary='Calendar'>
+			<caption>
+			Octubre 2016
+			</caption>
+			<thead>
+				<tr>
+					<th abbr='Lunes' scope='col' title='Lunes'>L</th>
+					<th abbr='Martes' scope='col' title='Martes'>M</th>
+					<th abbr='Miercoles' scope='col' title='Miercoles'>X</th>
+					<th abbr='Jueves' scope='col' title='Jueves'>J</th>
+					<th abbr='Viernes' scope='col' title='Viernes'>V</th>
+					<th abbr='Sabado' scope='col' title='Sabado'>S</th>
+					<th abbr='Domingo' scope='col' title='Domingo'>D</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a href="javascript:mostrarFecha(1)">1</a></td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td><a href="javascript:mostrarFecha(9)">9</a></td>
+					<td>10</td>
+					<td>11</td>
+					<td>12</td>
+					<td>13</td>
+					<td>14</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>16</td>
+					<td>17</td>
+					<td><a href="javascript:mostrarFecha(18)">18</a></td>
+					<td>19</td>
+					<td>20</td>
+					<td>21</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>23</td>
+					<td>24</td>
+					<td>25</td>
+					<td>26</td>
+					<td><a href="javascript:mostrarFecha(27)">27</a></td>
+					<td><a href="javascript:mostrarFecha(28)">28</a></td>
+				</tr>
+				<tr>
+					<td>29</td>
+					<td><a href="javascript:mostrarFecha(30)">30</a></td>
+					<td><a href="javascript:mostrarFecha(31)">31</a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

@@ -15,7 +15,7 @@ function crearCapa(miCapa){
 		var numHijo = parseInt(miCapa.innerHTML) + 1;
 		capaNueva.innerHTML = numHijo ;//pongo el número en la capa +1 a la que le hago el mouseover
 		
-		var colorHijo = parseInt(miCapa.innerHTML) + 1;
+		var colorHijo = parseInt(miCapa.innerHTML) - 1;
 		capaNueva.style.backgroundColor = colores[colorHijo];
 		
 		capaNueva.setAttribute("onmouseover","crearCapa(this)");//asigno atributo onmouseover para que el div creado llame a la funcion

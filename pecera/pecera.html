@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pecera</title>
+    <style>
+        #content {
+            width: 1700px;
+            height:600px;
+            position: absolute;
+            margin-left: 70px;
+        }
+        #buttons {
+            text-align: right;
+        }
+        #pecera {
+            height: 600px;
+            width: 1700px;
+            border: 2px solid black;
+            background-color: lightblue;
+        }
+        #agua {
+            width: 1700px;
+            height: 600px;
+            background-color: white;
+            position: absolute;
+        }
+        .pececito {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .comida {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            position: absolute;
+        }
+    </style>
+    <script src="pescera.js"></script>
+</head>
+
+<body onload="inicio()">
+    <div id="content">
+        <div id="buttons">
+            <button id="botonLlenar" onclick="llenar()">LLENAR</button>
+            <button id="botonPez" onclick="crearPez()">PEZ</button>
+            <button id="botonComida" onclick="crearComida()">COMIDA</button>
+        </div>
+
+        <div id="nPez">
+            <span id="contPez">Pez Nº:</span>
+            <br>
+            <span id="comidita">Comida:</span>
+        </div>
+        <div id="pecera"><span id="agua"></span>
+        </div>
+    </div>
+</body>
+
+</html>

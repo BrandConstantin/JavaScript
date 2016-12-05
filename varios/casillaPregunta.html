@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>Casilla que pregutna con PROMPT</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var respuesta = prompt("Tienes ganas de estudiar?", "");
+
+			if(respuesta == "" || respuesta == null){
+				alert("Has rechazado contestar");
+			}else{
+				alert("Has dicho: " + respuesta);
+			}
+		</script>
+	</body>
+</html>

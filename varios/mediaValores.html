@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Media valores</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var valor;
+			var numValores = 0;
+			var suma = 0;
+			var resultado = 0;
+
+			valor = prompt("Introduce un valor entero para hacer la media. (al pulsar cancel se termina el programa y se hace la media)");
+
+			while(valor != null){
+				if(isNaN(valor)){
+					alert("El valor introducido no es un número");
+				}else{
+					numValores++;
+					suma += parseInt(valor);
+				}
+				valor = prompt("Introduce un valor entero para hacer la media. (al pulsar cancel se termina el programa y se hace la media)");
+			}
+
+			//mostrar la media de los valores
+			if(numValores > 0){
+				resultado = suma / numValores;
+				alert("La media es " + resultado);
+			}else{
+				alert("No se ha introducido ningún valor");
+			}
+		</script>
+	</body>
+</html>

@@ -1,4 +1,4 @@
-var contadorCapa = 0;
+var contadorCapa =0;
 
 /*var padre;
 window.onload=function(){
@@ -25,10 +25,10 @@ function creaCapas(){
 	bolita.style.height = tamano + "px";
 	
 	//Color aleatorio	
-	var colorAleatorio = "rgb(" + Math.floor(Math.random() * 255) + "," 
+	var coloraleatorio = "rgb(" + Math.floor(Math.random() * 255) + "," 
 		+ Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
 
-	bolita.style.backgroundColor = colorAleatorio;
+	bolita.style.backgroundColor=coloraleatorio;
 	
 	//Le asigno un valor=0 que usare para 
 	//contador interno

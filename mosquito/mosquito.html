@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Costy">
+        <meta name="description" content="Examen de Javascript">
+        <title>Atrapa Mosquito</title>
+        <style>
+            div {
+                margin: 0;
+                padding: 0;
+            }
+            div#contenedor {
+                position: relative;
+                width: 1700px;
+                height: 700px;
+            }
+            div#botones {
+                overflow: hidden;
+            }
+            button {
+                float: right; 
+                margin: 10px 100px 10px 0;
+            }
+            div#info {
+                margin: 0 0 20px 20px;
+            }
+            div#cuadroJuego {
+                position: relative;
+                background-color: #164;
+                border: 3px solid red;
+                overflow: hidden;
+                width: 1700px;
+                height: 700px;
+            }
+            div#bebe {
+                position: absolute;
+                width: 130px;
+                height: 130px;
+                background: url("images/baby.png") no-repeat;
+            }
+            div#mosquito {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background: url("images/fly.png") no-repeat;
+            }
+            div.mosqMuerto {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background: url("images/deadmosquito.png") no-repeat;
+            }
+        </style>
+        <script src="mosquito.js">
+        </script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="botones">
+                <button id="botonEmpezar" onclick="empezar()">EMPEZAR</button>
+            </div>
+            <div id="info">
+                <span id="fin"></span><br>
+                Nivel: <span id="numNivel"></span>
+            </div>
+            <div id="cuadroJuego"></div>
+        </div>
+    </body>
+</html>

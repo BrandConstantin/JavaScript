@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Ordenar array de forma ascendente</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var valor;
+			var posicion = 0;
+			var terminado = false;
+			nombres = new Array();
+
+			while(!terminado){
+				valor = prompt("Introduce un nombre (o pulsa cancelar para terminar el programa)");
+
+				if(valor == null){
+					terminado = true;
+				}else if(!isNaN(valor)){
+					alert("El nombre contiene números (invalido!)");
+				}else{
+					nombres[posicion] = valor;
+					posicion++;
+				}
+			}
+
+			//mostrar los nombres introducidos
+			document.write("<center><h1><u>Array de nombre ordenados</u></h1></center><hr style='color:#469'><br><br>");
+			if (posicion > 0){
+		   		document.write("<center><h3>Los nombres introducidos son : ");  
+			   	document.write(nombres.join(", ")+"<br></h3>");;
+			  	nombres = nombres.sort();
+			  	document.write("<h3 style='color:#f67'> Los nombres ordenados son : "); 
+			  	document.write(nombres.join(", ")+"<br></h3></center>");;
+			}else{
+			   alert("No se ha introducido ningún nombre");
+			}
+		</script>
+	</body>
+</html>

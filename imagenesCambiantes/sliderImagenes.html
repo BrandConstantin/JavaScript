@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Imagenes cambiantes</title>
+		<meta charset="utf-8">
+	<script type="text/javascript" src="sliderImagenes.js">
+	</script>
+	</head>
+	<body>
+		<form name="formulario">
+		<div>
+			<img src="img/pelicano.jpg" name="imagen"  alt="imagen" width="400" height="360" border="2">
+		</div>
+		<br>
+		<input type="button" name="botonAnterior" value="< Anterior" onClick="javascript:anterior()" disabled>
+		<input type="button" name="botonPrimero" value="<<| Primero" onClick="javascript:primero()">
+		<input type="button" name="botonUltimo" value="Ultimo |>>" onClick="javascript:ultimo()">
+		<input type="button" name="botonSiguiente" value="Siguiente >" onClick="javascript:siguiente()" >
+		</form>
+	</body>
+</html>

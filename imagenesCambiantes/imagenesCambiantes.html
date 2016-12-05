@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Imagenes cambiantes</title>
+		<meta charset="utf-8">
+	<script type="text/javascript" src="imagenesCambiantes.js">
+	</script>
+	</head>
+	<body  bgcolor ="silver" onload="setInterval('cambiar()', 1000)">
+	<table width="800" height="400" border="2" align="center" cellpadding="6" cellspacing="3" bordercolor="#FFF" bgcolor="#669">
+	<tr>
+	   <td>
+	   	<div align="center">
+	   		<img src="img/foca.jpg" name="imagenCambiable1"  alt="panda" width="200" height="160" border="2" style="border-color: #FFD">
+	   	</div>
+	   </td>
+	   <td>
+	   	<div align="center">
+	   		<img src="img/puma.jpg" name="imagenCambiable2" alt="panda" width="200" height="160" border="2" style="border-color: #FFD" />
+	   	</div>
+	   </td>
+	   <td>
+	   	<div align="center">
+	   		<img src="img/panda.jpg" name="imagenCambiable3" alt="pantera" width="200" height="146" border="2" style="border-color: #FFD" />
+	   	</div>
+	   </td>
+	 </tr>
+	</table>
+	<table width="800" height="400" border="2" align="center" cellpadding="6" cellspacing="3" bordercolor="#FFF" bgcolor="#996">
+	 <tr>
+	   <td height="187">
+	   	<div align="center">
+	   		<img src="img/panda.jpg" onMouseOver= "this.src='img/foca.jpg'" onMouseOut= "this.src='img/panda.jpg'" alt="pelicano" width="200" height="150" border="2" style="border-color: #FFD" />
+	   	</div>
+	   </td>
+	   <td>
+	   	<div align="center">
+	   		<img src="img/leonmarino.jpg" onMouseOver= "this.src='img/ballena.jpg'" onMouseOut= "this.src='img/leonmarino.jpg'" alt="leonmarino" width="200" height="160" border="2" style="border-color: #FFD" />
+	   	</div>
+	   </td>
+	   <td>
+	   	<div align="center">
+	   		<img src="img/puma.jpg" onMouseOver= "this.src='img/pantera.jpg'" onMouseOut= "this.src='img/puma.jpg'" alt="puma" width="200" height="160" border="2" style="border-color: #FFD" />
+	   	</div>
+	   </td>
+	 </tr>
+	</table>
+	</body>
+</html>
