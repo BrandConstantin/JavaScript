@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Fecha</title>
+	<!--<script src="stringMethods.js"></script>-->
+</head>
+<body>
+
+<h1>Fecha</h1>
+
+<h3>new Date() - (object)</h3>
+<p id="demo1"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo1").innerHTML = d;
+
+//se puede especificar la fecha a mostrar con
+// var d = new Date("October 13, 2014 11:13:00");
+
+//para tranformarlo en un string
+// document.getElementById("demo").innerHTML = d.toString();
+//o con 
+// document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+
+<h3>getTime()</h3>
+<p>Returns the number of milliseconds since January 1, 1970 (the internal clock in JS):</p>
+<p id="demo2"></p>
+
+<script>
+var a = new Date();
+document.getElementById("demo2").innerHTML = a.getTime();
+</script>
+
+<h3>getFullYear()</h3>
+<p>Returns the full year of a date:</p>
+<p id="demo3"></p>
+
+<script>
+var b = new Date();
+document.getElementById("demo3").innerHTML = b.getFullYear();
+</script>
+
+<h3>getDay()</h3>
+<p>Returns the weekday as a number:</p>
+<p id="demo4"></p>
+
+<script>
+var c = new Date();
+document.getElementById("demo4").innerHTML = c.getDay();
+</script>
+<p>You can use an array to display the name of the weekday:</p>
+<p id="demo5"></p>
+
+<script>
+var e = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("demo5").innerHTML = days[e.getDay()];
+</script>
+
+</body>
+</html> 
