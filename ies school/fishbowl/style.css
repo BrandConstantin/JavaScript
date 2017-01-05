@@ -1,0 +1,63 @@
+#container{
+	position: absolute;
+	width: 98%;
+	height: 600px;
+	border: 1px solid #000;
+	overflow: hidden;
+}
+
+#head{
+	position: absolute;
+	left: 5px;
+	background-color: #fa0;
+	width: 99%;
+	height: 35px;
+	display: inline;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#table{
+	float: left;
+	padding-left: 20px;
+}
+
+#buttons{
+	float: right;
+	padding-right: 20px;
+}
+
+#choose{
+	float: left;
+	padding-left: 100px;
+}
+
+#fishbowl{
+	background-color: aqua;
+	margin-top: 100px;
+	border: 1px dashed #000;
+	width: 99%;
+	height: 500px;
+	margin-left: 5px;
+}
+
+#water{
+	background-color: #fff;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.fish{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	background-repeat: no-repeat;
+}
+
+.food{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	position: absolute;
+}
