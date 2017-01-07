@@ -26,6 +26,13 @@ function start(){
 	var level = 1;
 	document.getElementById("level").innerHTML = "Level: " + level;
 
+	/*
+	var allDivs = document.querySelectorAll("#container div");
+	for(var i = 0; i < allDivs.length; i++){
+		allDivs[i].parentNode.removeChild(allDivs[i]);
+	}
+	*/
+
 	//onload the function:
 	createBuilding();
 	createSpiderman();
@@ -92,8 +99,8 @@ function goDown(){
 
 //function to pause the spider
 function toPause(){
-	var spider = document.getElementById("idSpider");
-	var onTheTop = spider.offsetTop;
+	//var spider = document.getElementById("idSpider");
+	//var onTheTop = spider.offsetTop;
 	clearInterval(id);
 	clearInterval(id2);
 }
@@ -112,26 +119,62 @@ function createGoblin(){
 }
 
 //function to create the bomb
-function bomb(goblin){
-	//shoot the same number of bomb like the number of level
-	for(var i = 0; i < level; i++){
-		//create the bombs
-		var bomb = document.createElement("div");
-		bomb.className = "bomb";
-		bomb.id += "idBomb";
-		//shoot the bomb from the position of the goblin
-		bomb.style.left = goblin.offsetLeft + 30 + "px";
-		bomb.style.top = goblin.offsetTop + 30 + "px";
-		document.getElementById("container").appendChild(bomb);
-		//function to shoot the bomb
-		shootBomb();
-	}
+function bomb(){
+	//create the bombs
+	var bomb = document.createElement("img");
+	var bombHight = getRand (120, 500) + "px";
+	bomb.setAttribute("src", "img/bomb.png");
+	bomb.className = "bomb";
+	bomb.id = "idBomb" + i;
+	//shoot the bomb from the position of the goblin
+	bomb.style.left = goblin.offsetLeft + 30 + "px";
+	bomb.style.top = goblin.offsetTop + 30 + "px";
+	//document.getElementById("container").appendChild(bomb);
+	//movement the bomb
+	var bombInterval = setInterval(function(){
+		var spider = document.getElementById("spider");
+		//if the bomb touch the spider
+		if((((bomb.offsetLeft + 40) > spider.offsetLeft) && ((bomb.offsetLeft + 40) < (spider.offsetLeft + 150))) &&
+			((bomb.offsetTop >= spider.offsetTop) && (bomb.offsetTop <= (spider.offsetTop + 109)) || 
+				((bomb.offsetTop + 56) >= spider.offsetTop) && ((bomb.offsetTop + 56) <= (spider.offsetTop + 109)))){
+			bomb.parentNode.removeChild(bomb);
+			document.getElementById("goblin").setAttribute("onclick", "shoot()");
+		}else if(bomb.offsetLeft == (1000 - 170)){
+			goblin.setAttribute("onclick", "");
+			explosion(bomb);
+		}else{
+			bomb.style.left = (bomb.offsetLeft + 1) + "px";
+		}
+
+		//bomb vertical movement
+		if(bomb.offsetTop < bombHight){
+			bomb.style.top = (bomb.offsetTop + 1) + "px";
+		}else{
+			bomb.style.top = (bomb.offsetTop - 1) + "px";
+		}
+	}, 5);
+	document.getElementById("container").appendChild(bomb);
 }
 
 //function to shoot the bomb
-function shootBomb(){
+function shoot(){
+	level++;
+	document.getElementById("level").innerHTML = "Level: " + level;
+	var goblin = document.getElementById("goblin");
+	goblin.setAttribute("onclick", "");
+	for(var i = 0; i < level; i++){
+		bomb();
+	}
+
+	goblin.style.top = getRand(120, 500) + "px";
+}
+
+/*
+//function to shoot the bomb
+function shootBomb(bomb){
 	var spider = document.getElementById("idSpider");
-	var spiderTop = spider.offsetTop;
+	//position on the top of spider
+	var onTheTopSpider = spider.offsetTop;
 
 	var building = document.getElementById("idBuilding");
 
@@ -143,8 +186,8 @@ function shootBomb(){
 	//create random position
 	var randomOnTheTop = getRand(120, 500) + "px";
 
-	var id = setInterval(function(){
-		goblin.setAttribute("onclick", "");
+	var id3 = setInterval(function(){
+		goblin.setAttribute("onclick", "bomb(this)");
 		var onTheTopSpider = spider.offsetTop;
 
 		if (onTheTop < randomOnTheTop) {
@@ -161,7 +204,7 @@ function shootBomb(){
 			onTheLeft--;
 			bomb.style.left = onTheLeft + "px";
 		}else{
-			clearInterval(id);
+			clearInterval(id3);
 			level++;
 
 			if((onTheLeft == 300) && (onTheTop >= onTheTopSpider - 60) &&
@@ -177,14 +220,16 @@ function shootBomb(){
 				//shott again the bomb
 				goblin.setAttribute("onclick", "bomb(this)");
 			}else{
-				bomb.style.backgroundImage = url("img/explosion.png");
+				bomb.style.backgroundImage = "url(img/explosion.png)";
 				bomb.style.top = 300 + 'px';
 				bomb.style.left = 75 + 'px';
 
+				//remove the building
 				building.parentNode.removeChild(building);
 
 				var mesage = document.createElement("div");
 				mesage.className = "mesage";
+				mesage.id = "idmesage";
 				document.getElementById("container").appendChild(mesage);
 				document.getElementById("container").innerHTML = "GAME OVER!";
 
@@ -197,4 +242,4 @@ function shootBomb(){
 	}, 5);
 
 	goblin.style.top = getRand(500, 100) + "px";
-}
+}*/
