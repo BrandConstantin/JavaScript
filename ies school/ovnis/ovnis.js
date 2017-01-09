@@ -46,6 +46,7 @@ function start(){
 }
 
 //create the houses
+var arrayHouse = [];
 function createHouses(){
 	var housesNumb = random(2, 6);
 	allHouses = housesNumb;
@@ -57,7 +58,7 @@ function createHouses(){
 		houses.style.left = (Math.floor((Math.random() * 1000) + 50)) + "px";
 		houses.style.top = 500 + "px";
 		document.getElementById("container").appendChild(houses);
-
+		arrayHouse = houses;
 	}
 }
 
@@ -79,54 +80,54 @@ function drop(ovni){
 		document.getElementById("container").appendChild(bomb);
 
 		//drop the bomb
-		function drop(bomb){
-			var intervalBomb = setInterval(function(){
-				if(bomb.offsetTop == 550){
-					for(var i = 0; i < housesNumb; i++){
-						if((bomb.offsetLeft >= houses.offsetLeft) && 
-							(bomb.offsetLeft < houses.offsetLeft + 50)){
-							houses.parentNode.removeChild(houses);
+		//function drop(ovni){
+		var intervalBomb = setInterval(function(){
+			if(bomb.offsetTop == 600){
+				for(var i = 0; i < arrayHouse.length; i++){
+					if((bomb.offsetLeft >= arrayHouse[i].offsetLeft) && 
+						(bomb.offsetLeft < arrayHouse[i].offsetLeft + 50)){
+						arrayHouse[i].parentNode.removeChild(arrayHouse[i]);
 
-							housesNumb--;
+						housesNumb--;
+						document.getElementById("bombNumb").innerHTML = bombNumb;
 
-							if(housesNumb == 0){
-								level();
-							}
+						if(housesNumb == 0){
+							level();
 						}
 					}
-
-					clearInterval(intervalBomb);
-					//createTree(bomb);
-					bomb.parentNode.removeChild(bomb);
-				}else{
-					bomb.style.top = (bomb.offsetTop + 1) + "px";
 				}
-			}, 4);
-		}
 
-		function level(){
-			velocity += velocity;
-			bombNumb += 5;
-			createHouses();
-		}
+				clearInterval(intervalBomb);
+				createTree(bomb);
+				bomb.parentNode.removeChild(bomb);
+			}else{
+				bomb.style.top = (bomb.offsetTop + 3) + "px";
+			}
+		}, 4);
+		//}
+	}else{
+		document.getElementById("bombNumb").innerHTML = "Bomb Nº: 0";
+		//document.getElementById("end").innerHTML = "Game Over";
 	}
 }
-/*
-//fall the bomb
 
-/*
-//compruve
-function compruve(positionBomb){
-	var compruve = false;
-	var allHouses = document.querySelectorall(".houses");
+function level(){
+	velocity += velocity;
+	bombNumb += 5;
+	createHouses();
+}
 
-	for(var i = 0; i < allHouses.length; i++){
-		if((positionBomb > allHouses[i].offsetLeft) && 
-			(positionBomb < allHouses[i].offsetLeft + 90)){
-			allHouses[i].parentNode.removeChild(allHouses[i]);
-			compruve = true;
-		}
-	}
+//createTree the houses with the tree
+function createTree(bomb){
+	var createTree = document.createElement("div");
+	//createTree.setAttribute("src", "img/tree.png");
+	createTree.style.left = (bomb.offsetLeft - 25) + "px";
+	createTree.style.top = (bomb.offsetTop - 50) + "px";
+	createTree.className = "createTree";
+	document.getElementById("container").appendChild(createTree);
 
-	return compruve;
-}*/
+	var intervalReplace = setInterval(function(){
+		//createTree.parentNode.removeChild(createTree);
+		clearInterval(intervalReplace);	
+	}, 500);	
+}
