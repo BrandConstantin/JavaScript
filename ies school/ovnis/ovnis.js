@@ -49,7 +49,9 @@ function start(){
 var arrayHouse = [];
 function createHouses(){
 	var housesNumb = random(2, 6);
-	allHouses = housesNumb;
+	totalTree = housesNumb;
+
+	document.getElementById("totalTree").innerHTML = "Total Tree: " + totalTree;
 
 	for(var i = 0; i < housesNumb; i++){
 		var houses = document.createElement("div");
@@ -70,7 +72,7 @@ function drop(ovni){
 
 		var bomb = document.createElement("img");
 		bomb.className = "bomb";
-		bomb.id = "idBomb";
+		//bomb.id = "idBomb";
 		var positionBombLeft = ovni.offsetLeft;
 		var positionBombTop = ovni.offsetTop;
 		bomb.style.left = positionBombLeft + "px";
@@ -82,14 +84,14 @@ function drop(ovni){
 		//drop the bomb
 		//function drop(ovni){
 		var intervalBomb = setInterval(function(){
-			if(bomb.offsetTop == 600){
+			if(bomb.offsetTop == 550){
 				for(var i = 0; i < arrayHouse.length; i++){
 					if((bomb.offsetLeft >= arrayHouse[i].offsetLeft) && 
 						(bomb.offsetLeft < arrayHouse[i].offsetLeft + 50)){
 						arrayHouse[i].parentNode.removeChild(arrayHouse[i]);
 
 						housesNumb--;
-						document.getElementById("bombNumb").innerHTML = bombNumb;
+						document.getElementById("bombNumb").innerHTML = "Bomb Nº: " + bombNumb;;
 
 						if(housesNumb == 0){
 							level();
@@ -107,7 +109,7 @@ function drop(ovni){
 		//}
 	}else{
 		document.getElementById("bombNumb").innerHTML = "Bomb Nº: 0";
-		//document.getElementById("end").innerHTML = "Game Over";
+		document.getElementById("end").innerHTML = "Game Over";
 	}
 }
 
@@ -120,14 +122,14 @@ function level(){
 //createTree the houses with the tree
 function createTree(bomb){
 	var createTree = document.createElement("div");
-	//createTree.setAttribute("src", "img/tree.png");
+	createTree.setAttribute("src", "img/tree.png");
 	createTree.style.left = (bomb.offsetLeft - 25) + "px";
 	createTree.style.top = (bomb.offsetTop - 50) + "px";
 	createTree.className = "createTree";
 	document.getElementById("container").appendChild(createTree);
 
 	var intervalReplace = setInterval(function(){
-		//createTree.parentNode.removeChild(createTree);
+		createTree.parentNode.removeChild(createTree);
 		clearInterval(intervalReplace);	
 	}, 500);	
 }
