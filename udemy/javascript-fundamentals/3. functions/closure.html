@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Closure</title>
+		<meta charset="utf-8"/>
+		
+		<script>
+			function function1(){
+				var h = "Hello";
+			
+				function function2(){
+					var n = "Constantin";
+					
+					document.write(h + " " + n);
+				}
+				
+				return function2();				
+			}	
+			
+			function1();		
+		</script>
+	</head>
+</html>
