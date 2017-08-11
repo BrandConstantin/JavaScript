@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Onclick</title>
+		<meta charset="utf-8"/>
+		<script>
+			function calcular(a){
+				var num1 = parseInt(document.calculadora.num1.value);
+				var num2 = parseInt(document.calculadora.num2.value);
+				
+				var resultado = document.calculadora.resultado;				
+				
+				if(a.value == "ADD"){
+					resultado.value = num1 + num2;
+				}else if(a.value == "SUB"){
+					resultado.value = num1 - num2;
+				}else if(a.value == "MUL"){
+					resultado.value = num1 * num2;
+				}else if(a.value == "DIV"){
+					resultado.value = num1 / num2;
+				}else{
+					resultado.value = num1 % num2;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="calculadora">
+			Number 1: <input type="text" name="num1"/><br/>
+			Number 2: <input type="text" name="num2"/><br/>
+			Result: <input type="text" name="resultado"/><br/>
+			<input type="button" name="ADD" value="ADD" onclick="calcular(this)"/>
+			<input type="button" name="SUB" value="SUB" onclick="calcular(this)"/>
+			<input type="button" name="MUL" value="MUL" onclick="calcular(this)"/>
+			<input type="button" name="DIV" value="DIV" onclick="calcular(this)"/>
+			<input type="button" name="MOD" value="MOD" onclick="calcular(this)"/>
+		</form>
+	</body>
+</html>

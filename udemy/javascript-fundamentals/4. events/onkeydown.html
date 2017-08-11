@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Onkeydown/Onkeyup</title>
+		<meta charset="utf-8"/>
+		<script>
+			function onDown(x){
+				x.style.color = "white";
+				x.style.backgroundColor = "grey";
+			}
+			
+			function onUp(x){
+				x.style.color = "white";
+				x.style.backgroundColor = "blue";
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" onkeydown="onDown(this)" onkeyup="onUp(this)"/>
+	</body>
+</html>

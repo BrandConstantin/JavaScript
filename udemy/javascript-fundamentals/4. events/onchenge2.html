@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Onchange 2</title>
+		<meta charset="utf-8"/>
+		<script>
+			function changeEvent(x){
+				document.body.style.backgroundImage = "url('" + x +"')";
+			}
+		</script>
+	</head>
+	<body>
+		<select onchange="changeEvent(this.value)">
+			<option value="white">Select a wine</option>
+			<option value="img/vino1.png">Whine 1</option>
+			<option value="img/vino2.png">Whine 2</option>
+			<option value="img/vino3.png">Whine 3</option>
+			<option value="img/vino4.png">Whine 4</option>
+		</select>
+	</body>
+</html>

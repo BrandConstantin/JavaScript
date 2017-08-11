@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Onmouseover/Onmouseout with custom functions</title>
+		<meta charset="utf-8"/>
+		<script>
+			function stoped(x){
+				x.style.color = "red";
+				x.style.backgroundColor = "yellow";
+				x.innerHTML = "MOUSEOVER";
+			}
+			
+			function started(y){
+				y.style.color = "white";
+				y.style.backgroundColor = "black";
+				y.innerHTML = "MOUSEOUT";
+			}
+		</script>
+	</head>
+	<body>
+		<marquee onmouseover="stoped(this)" onmouseout="started(this)">Start/Stop</marquee>
+	</body>
+</html>

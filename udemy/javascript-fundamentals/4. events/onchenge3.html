@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Onchange 3</title>
+		<meta charset="utf-8"/>
+		<script>
+			function changeEvent(x){
+				window.location = x;
+			}
+		</script>
+	</head>
+	<body>
+		<select onchange="changeEvent(this.value)">
+			<option value="white">Select a website to visit</option>
+			<option value="https://www.linkedin.com/in/constantin-brindusoiu-824b2265/">Linkedin</option>
+			<option value="https://github.com/BrandConstantin">Github</option>
+		</select>
+	</body>
+</html>
