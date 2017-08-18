@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Date</title>
+		<meta charset="utf-8"/>
+		<script>
+			function displayDate(){
+				var d = new Date();
+				var x = d.toLocaleTimeString();
+				var y = d.toLocaleDateString();
+				var j = d.toLocaleString();
+			
+				document.getElementById("dateInfoD").innerHTML = d + "<br/>";
+				document.getElementById("dateInfoX").innerHTML = x + "<br/>";
+				document.getElementById("dateInfoY").innerHTML = y + "<br/>";
+				document.getElementById("dateInfoJ").innerHTML = j + "<br/>";
+			}
+			
+		</script>
+	</head>
+	<body onload="displayDate()">
+		<p id="dateInfoD"></p>
+		<p id="dateInfoX"></p>
+		<p id="dateInfoY"></p>
+		<p id="dateInfoJ"></p>
+	</body>
+</html>
