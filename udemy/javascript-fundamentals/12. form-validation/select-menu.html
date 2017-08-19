@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Select menu</title>
+		<meta charset="utf-8"/>
+		<script>			
+			function validate(){
+				var color = document.myForm.color.value;
+				
+				if(color == ""){
+					alert("Please select a color");
+					
+					document.myForm.color.focus();
+					return false;
+				}else{
+					alert("Validation succsessfull");
+					return true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Select a color:</h3>
+		<form name="myForm" action="registration.jsp" onsubmit="return validate()">
+			<select name="color">
+				<option value="">Select a color</option>
+				<option value="blue">blue</option>
+				<option value="red">red</option>
+				<option value="black">black</option>
+			</select>
+			<input type="submit" value="Submit"/>
+		</form>
+	</body>
+</html>

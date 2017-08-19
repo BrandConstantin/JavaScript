@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Numeric Validation</title>
+		<meta charset="utf-8"/>
+		<script>			
+			function validate(){
+				var exp = /^[A-Z a-z 0-9\s]+$/;
+				//var exp = /^[A-Z a-z 0-9\s]{3, 10}$/;
+				var adress = document.myForm.adress.value;
+				var result = exp.test(adress);
+				
+				if(result){
+					alert("validation successfull");
+				}else{
+					document.getElementById("err").innerHTML = "Please enter a alpha numeric values";
+					document.myForm.adress.focus();
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>User registration:</h3>
+		<form name="myForm" action="registration.jsp" onsubmit="return validate()">
+			Adress: <textarea name="adress"></textarea>
+			<b id="err"></b><br/>
+			<input type="submit" value="Submit"/>
+		</form>
+	</body>
+</html>

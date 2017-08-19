@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Number Fields</title>
+		<meta charset="utf-8"/>
+		<script>			
+			function validate(){
+				var x = document.myForm.number.value;
+				
+				if(isNaN(x) || x < 1 || x > 10){
+					alert("Please enter a valid number");
+					document.myForm.number.focus();
+					return false;
+				}else{
+					alert("Validation succsessfull");
+					return true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Enter a number from 1-10:</h3>
+		<form name="myForm" action="registration.jsp" onsubmit="return validate()">
+			Number: <input type="number" name="number"/>
+			<input type="submit" value="Register"/>
+		</form>
+	</body>
+</html>

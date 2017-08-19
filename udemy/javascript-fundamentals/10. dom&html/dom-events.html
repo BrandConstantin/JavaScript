@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Dom:Events</title>
+		<meta charset="utf-8"/>
+		<script>
+			function handleEvents(){
+				document.getElementById("button1").addEventListener("click", handleButtonClick);
+				
+				function handleButtonClick(){
+					alert("Click Events");
+				}
+			}
+			
+			window.addEventListener("load", handleEvents);
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Click me" id="button1"/>		
+	</body>
+</html>

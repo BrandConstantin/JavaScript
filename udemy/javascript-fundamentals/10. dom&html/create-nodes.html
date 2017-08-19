@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Dom:Create nodes</title>
+		<meta charset="utf-8"/>
+		<script>
+			function handleCreate(){
+				var parent = document.getElementById("div1");
+				var child = document.createElement("p");
+				var text = document.createTextNode("Hola desde Europa");
+				child.appendChild(text);
+				
+				parent.appendChild(child);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<p id="p1">Hola desde America!</p>
+			<p id="p2">Hola desde Asia</p>
+		</div>
+		<input type="button" value="Create" onclick="handleCreate()">
+	</body>
+</html>

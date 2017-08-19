@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Dom:Remove nodes</title>
+		<meta charset="utf-8"/>
+		<script>
+			function handleRemove(){
+				var parent = document.getElementById("div1");
+				var child = document.getElementById("p2");
+				
+				parent.removeChild(child);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<p id="p1">Hola desde America!</p>
+			<p id="p2">Hola desde Asia</p>
+		</div>
+		<input type="button" value="Remove" onclick="handleRemove()">
+	</body>
+</html>

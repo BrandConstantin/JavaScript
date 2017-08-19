@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Checkboxes</title>
+		<meta charset="utf-8"/>
+		<script>			
+			function validate(){
+				var valid = false;
+				
+				if(document.getElementById("javascript").checked){
+					valid = true;
+				}else if(document.getElementById("jquery").checked){
+					valid = true;
+				}else if(document.getElementById("angularjs").checked){
+					valid = true;
+				}else if(document.getElementById("nodejs").checked){
+					valid = true;
+				}
+				
+				if(valid){
+					alert("Validation successfull");
+				}else{
+					alert("Please select a technology");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Select a technology:</h3>
+		<form name="myForm" action="registration.jsp" onsubmit="return validate()">
+			<input type="checkbox" id="javascript" value="javascript">JavaScript
+			<input type="checkbox" id="jquery" value="jquery">JQuery
+			<input type="checkbox" id="angularjs" value="angularjs">AngularJs
+			<input type="checkbox" id="nodejs" value="nodejs">NodeJs
+			<input type="submit" value="Check"/>
+		</form>
+	</body>
+</html>
