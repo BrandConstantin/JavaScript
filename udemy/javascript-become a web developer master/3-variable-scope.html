@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Info Player</title>
+		<meta charset="utf-8"/>
+		<script>	
+			var score = 5;
+			var playerName = "BrandConstantin";
+			
+			function infoPlayer(){
+				//var tempVariable = 0;
+				
+				seeInfo(playerName, score);
+			}
+			
+			function reset(){
+				score = 0;
+				playerName = "none";
+				
+				document.getElementById("h1").innerHTML = "Info: " + " " + score + " " + playerName;
+			}
+			
+			function seeInfo(playerName, score){
+				document.getElementById("h1").innerHTML = "Info: " + playerName + " " + score;
+			}
+			
+			function bestPlayer(){
+				score = 50;
+				playerName = "Horizon";
+				
+				document.getElementById("h1").innerHTML = "Best: " + playerName + " " + score;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="h1">Info: </h1>
+		<button onclick="infoPlayer()">Info Player</button>
+		<button onclick="reset()">Reset</button>
+		<button onclick="bestPlayer()">Best Player</button>
+	</body>
+</html>

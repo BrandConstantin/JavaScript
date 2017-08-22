@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Last Index Of</title>
+		<meta charset="utf-8"/>
+		<script>		
+			var numberArray = [54, 68, 97, 01, 23, 74, 32];
+			var stringArray = ["AAA", "BBB", "CCC", "DDD"];
+			var otherArray = ["Vovo", 2, "Dodo", 6];
+			
+			function showArray(){
+				document.getElementById("h1").innerHTML = numberArray + "<br/>" + stringArray + "<br/>" + otherArray;
+				//document.getElementById("h1").innerHTML = stringArray + "<br/>";
+				//document.getElementById("h1").innerHTML = otherArray + "<br/>";
+			}
+			
+			function lastIndex(){			
+				//busca la ultima coincidencia y da la posición
+				document.getElementById("h1").innerHTML = numberArray.lastIndexOf(23);
+			}
+			
+			function unshift(){			
+				//añade en la primera posición
+				document.getElementById("h1").innerHTML = numberArray.unshift(23);
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="h1"></h1>
+		<button onclick="showArray()">Show Array</button>
+		<button onclick="lastIndex()">Last Index Array</button>
+		<button onclick="unshift()">Last Index Array</button>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Splicing and adding</title>
+		<meta charset="utf-8"/>
+		<script>		
+			var numberArray = [54, 68, 97, 01, 23, 74, 32];
+			var stringArray = ["AAA", "BBB", "CCC", "DDD"];
+			var otherArray = ["Vovo", 2, "Dodo", 6];
+			
+			function showArray(){
+				document.getElementById("h1").innerHTML = numberArray + "<br/>" + stringArray + "<br/>" + otherArray;
+				//document.getElementById("h1").innerHTML = stringArray + "<br/>";
+				//document.getElementById("h1").innerHTML = otherArray + "<br/>";
+			}
+			
+			function spliced(){				
+				//1 representa la posición, a partir de esta posición es donde se añade los nuevos elementos
+				//2 representa el número de elementos eliminados para dejar sitio a los nuevos
+				numberArray.splice(1, 2, "A", "B");
+				document.getElementById("h1").innerHTML = numberArray;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="h1"></h1>
+		<button onclick="showArray()">Show Array</button>
+		<button onclick="spliced()">Split Array</button>
+	</body>
+</html>

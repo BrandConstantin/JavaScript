@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Combine Array</title>
+		<meta charset="utf-8"/>
+		<script>		
+			var numberArray = [54, 68, 97, 01, 23, 74, 32];
+			var stringArray = ["AAA", "BBB", "CCC", "DDD"];
+			var otherArray = ["Vovo", 2, "Dodo", 6];
+			
+			function showArray(){
+				document.getElementById("h1").innerHTML = numberArray + "<br/>" + stringArray + "<br/>" + otherArray;
+				//document.getElementById("h1").innerHTML = stringArray + "<br/>";
+				//document.getElementById("h1").innerHTML = otherArray + "<br/>";
+			}
+			
+			function sortNum(){				
+				document.getElementById("h1").innerHTML = numberArray.sort();
+			}
+			
+			function sortOth(){				
+				document.getElementById("h1").innerHTML = otherArray.sort();
+			}
+			
+			function sortStr(){				
+				document.getElementById("h1").innerHTML = stringArray.sort();
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="h1"></h1>
+		<button onclick="showArray()">Show Array</button>
+		<button onclick="sortNum()">Sort Number Array</button>
+		<button onclick="sortStr()">Sort String Array</button>
+		<button onclick="sortOth()">Sort Other Array</button>
+	</body>
+</html>
