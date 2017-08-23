@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<script>		
+			var textInput = "";
+			var someObject = {a: "A", b: "Bailor", c: 4342}
+			
+			function onloadFunction(){
+				var textInputTemp = parseInt(document.getElementById("textInput").value);
+				
+				textInput = textInputTemp;
+			}
+			
+			function buttonClick(){
+				onloadFunction();
+				
+				document.getElementById("h1").innerHTML = someObject.c;
+			}
+			
+			function intCheck(eventCheck){
+				eventCheck = (eventCheck) ? eventCheck : window.event;
+				
+				var code = (eventCheck.which) ? eventCheck.which : eventCheck.keyCode;
+				
+				if(code > 41 && (code < 48 || code > 57)){
+					return false;
+				}
+				
+				return true;
+			}
+		</script>
+	</head>
+	<body onload="onloadFunction">
+		<input type="number" id="textInput" onkeypress="return intCheck(event)"/>
+		<button onclick="buttonClick()">Click</button>
+		
+		<br/><br/>
+		<h1 id="h1"></h1>
+	</body>
+</html>
