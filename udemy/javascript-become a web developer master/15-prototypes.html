@@ -22,13 +22,23 @@
 			}
 			
 			function buttonClick(){
-				onloadFunction();				
+				onloadFunction();	
+
+				var player1 = new playerPrototype("BrandConstantin", "30", "male", 90, 70);
+				var player2 = new playerPrototype("ConstantinBrand", "3", "male", 50, 30);
 				
-				document.getElementById("h1").innerHTML = objElectricSkateBoard.nameAndSpeed();
+				document.getElementById("h1").innerHTML = player1.gender + "<br/>";
+				document.getElementById("h1").innerHTML = player2.name;
 			}
 			//////////////////////////////////////////
 			
-			
+			function playerPrototype(name, age, gender, strength, desterity){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				this.strength = strength;
+				this.desterity = desterity;
+			}
 			
 			//////////////////////////////////////////
 			function intCheck(eventCheck){

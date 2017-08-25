@@ -1,0 +1,100 @@
+*{
+	font-family: Futura, sans-serif;
+}
+
+html{
+	background-color: cadetblue;
+}
+
+button{
+	position: relative;
+	font-family: Futura, sans-serif;
+	font-size: 30px;
+	background-color: black;
+	color: whitesmoke;
+	border: none;
+	line-height: 0;
+	padding: 30px;
+	border-radius: 30px;
+	width: 350px;
+	margin-left: 20%;
+	margin-top: 50px;
+}
+
+#btnClear{
+	background-color: red;
+	color: yellow;
+}
+
+div{
+	position: relative;
+	background-color: whitesmoke;
+	max-width: 350px;
+	min-width: 130px;
+	box-sizing: border-box;
+	padding: 30px;
+	border-radius: 30px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+
+h1, h3{
+	color: black;
+	text-align: center;
+}
+
+h1{
+	text-transform: uppercase;
+	font-size: 60px;
+}
+
+h3{
+	font-size: 40px;
+}
+
+input{
+	background-color: wheat;
+	border-color: white;
+	font-size: 20px;
+	width: 200px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	color: orange;
+	position: relative;
+	margin-left: 40px;
+}
+
+input:focus{
+	online: none;
+	background: white;
+	color: black;
+}
+
+input:valid{
+	color: orange;
+}
+
+input:focus ~ label{
+	transform: translate(0, - 35px);
+	color: white;
+}
+
+input:valid ~ label{
+	transform: translate(4px; -36px);
+	color: white;
+}
+
+lable{
+	color: red;
+	font-size: 18px;
+	box-sizing: border-box;
+	padding: 10px 15px;
+	display: block;
+	position: relative;
+	margin-top: -70px;
+	z-index: 2;
+	pointer-events: none;
+}
