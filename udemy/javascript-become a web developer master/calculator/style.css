@@ -21,9 +21,21 @@ button{
 	margin-top: 50px;
 }
 
+button:hover{
+	background-color: white;
+	color: d34;
+	font-size: 40px;
+}
+
 #btnClear{
 	background-color: red;
 	color: yellow;
+}
+
+#btnClear:hover{
+	background-color: white;
+	color: d34;
+	font-size: 40px;
 }
 
 div{

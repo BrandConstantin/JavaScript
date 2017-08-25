@@ -4,22 +4,37 @@
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script>		
-
+			function btnCalculate(){
+				var cost = parseFloat(document.getElementById("txtCost").value);
+				var percentage = parseFloat(document.getElementById("txtPercentaje").value);
+				
+				percentage *= 0.01;
+				
+				var total = cost * percentage;
+				
+				document.getElementById("lblTotal").innerHTML = "Total: " + parseFloat(total).toFixed(2);
+			}
+			
+			function btnClear(){
+				document.getElementById("txtCost").value = "";
+				document.getElementById("txtPercentaje").value = "";
+				document.getElementById("lblTotal").innerHTML = "Total";
+			}
 		</script>
 	</head>
 	<body>
 		<h1>Calculator</h1>
 		<div class="inputClass">
-			<input type="number" required/>
+			<input type="number" id="txtCost" required/>
 			<lable>Enter Cost:</lable>
 		</div>
 		<br/>
 		<div class="inputClass">
-			<input type="number" required/>
+			<input type="number" id="txtPercentaje"  required/>
 			<lable>Enter Percentage:</lable>
 		</div>
-		<h3>Total</h3>
-		<button>Calculate</button>
-		<button id="btnClear">Clear</button>
+		<h3 id="lblTotal">Total</h3>
+		<button onclick="btnCalculate()">Calculate</button>
+		<button onclick="btnClear()" id="btnClear">Clear</button>
 	</body>
 </html>
