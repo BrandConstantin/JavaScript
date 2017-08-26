@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Sports Counter</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script>		
+			var team1Score = 0;
+			var team2Score = 0;
+			
+			function btnTeam1(){
+				team1Score += 1;
+				
+				document.getElementById("btnTeam1").innerHTML = team1Score;
+			}
+			
+			function btnTeam2(){
+				team2Score += 1;
+				
+				document.getElementById("btnTeam2").innerHTML = team2Score;
+			}
+			
+			function btnReset(){
+				team1Score = 0;
+				team2Score = 0;
+				
+				document.getElementById("btnTeam1").innerHTML = team1Score;
+				document.getElementById("btnTeam2").innerHTML = team2Score;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="principal">
+			<h1>Sports Counter</h1>
+			<div class="buttonClass1" onclick="btnTeam1()">
+				<button id="btnTeam1">0</button>
+				<h4>Team 1</h4>
+			</div>
+			<div class="buttonClass2" onclick="btnTeam2()">
+				<button id="btnTeam2">0</button>
+				<h4>Team 2</h4>
+			</div>
+		</div>
+		
+		<br/>
+		
+		<button onclick="btnReset()" id="btnReset">Reset</button>
+	</body>
+</html>
