@@ -1,0 +1,73 @@
+*{
+	font-family: Futura, sans-serif;
+}
+
+html{
+	background-color: #001C2E;
+}
+
+div{
+	position: relative;
+	background-color: #004E68;
+	max-width: 500px;
+	min-height: 110px;
+	box-sizing: border-box;
+	padding: 20px;
+	margin: 0 auto;
+	/*transform: translate(-50%, 0);*/
+}
+
+h1, h3{
+	background-color: white;
+	text-align: center;
+	font-color: #001C2E;
+	font-size: 50px;
+}
+
+label{
+	color: white;
+	font-size: 22px;
+	display: block;
+	font-weight: bold;
+	position: relative;
+}
+
+input{
+	background-color: white;
+	border: none;
+	font-size: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	color: darkblue;
+	font-weight: bolder;
+}
+
+input:focus{
+	background-color: lightgrey;
+}
+
+button{
+	background-color: white;
+	line-height: 0;
+	font-size: 30px;
+	padding: 30px;
+	width: 60%;
+	margin-left: 20%;
+	margin-bottom: 20px;
+}
+
+#btnCalculate{
+	background-color: green;
+	font-size: 40px;
+}
+
+#btnClear{
+	background-color: orange;
+	font-size: 25px;
+}
+
+#btnCalculate:focus, #btnCalculate:hover, #btnClear:focus, #btnClear:hover{
+	background-color: darkblue;
+	color: white;
+}

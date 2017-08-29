@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Interest Calculator</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script>	
+			var principal;
+			var rate;
+			var compoundPearYear;
+			var years;
+			
+			function btnClear(){
+				document.getElementById("txtPrincipal").value = "";
+				document.getElementById("txtCoumpoundPerYear").value = "";
+				document.getElementById("txtYears").value = "";
+				document.getElementById("txtRate").value = "";
+				
+				principal = 0;
+				rate = 0;
+				compoundPearYear = 0;
+				years = 0;
+			}
+			
+			function btnCalculate(){
+				principal = parseFloat(document.getElementById("txtPrincipal").value);
+				rate = parseFloat(document.getElementById("txtRate").value) / 100;
+				compoundPearYear = parseFloat(document.getElementById("txtCoumpoundPerYear").value);
+				years = parseFloat(document.getElementById("txtYears").value);
+				
+				var compoundInterest = (principal * (Math.pow(1 + rate, years) - 1) / compoundPearYear) + principal;
+				document.getElementById("lblAnswer").innerHTML = "$" + parseFloat(compoundInterest).toFixed(2);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="mainDiv">
+			<h1>Compound Interest</h1>
+			<div class="inputClass">
+				<input type="number" id="txtPrincipal" required/>
+				<label>Principal</label>
+			</div>
+			<div class="inputClass">
+				<input type="number" id="txtRate" required/>
+				<label>Rate</label>
+			</div>
+			<div class="inputClass">
+				<input type="number" id="txtCoumpoundPerYear" required/>
+				<label>Compound Per Year</label>
+			</div>
+			<div class="inputClass">
+				<input type="number" id="txtYears" required/>
+				<label>Years</label>
+			</div>
+			
+			<h3 id="lblAnswer">Answer</h3>
+			<button id="btnClear" onclick="btnClear()">Clear</button>
+			<button id="btnCalculate" onclick="btnCalculate()">Calculate</button>
+		</div>
+		
+		<br/>
+		
+		<button onclick="btnReset()" id="btnReset">Reset</button>
+	</body>
+</html>
