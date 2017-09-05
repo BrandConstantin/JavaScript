@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	 <head> 
+	 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	 	<title>getElementById</title>
+		<style>
+			hr{
+				background-color: red;
+				height: 3px;
+			}
+		</style>
+	</head>
+	<body> 
+		<p>Esta página demuestra el poder del <span id="metodo">"getElementById"</span>.</p> 
+		<hr>
+		<p id="practica"></p>
+		
+		<script type="text/javascript"> 
+			var elemRecojido = document.getElementById("metodo");
+
+			document.getElementById("practica").innerHTML = "El texto recojido del primer paragrafo es " + elemRecojido.innerHTML;
+		</script> 
+	</body> 
+</html>

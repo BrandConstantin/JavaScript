@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head> 
+	 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+ 	</head>
+	<title>getElementsByTagName</title>
+<body>
+	<p>Este ejemplo demuestra el método <b>getElementsByTagName</b></p>
+	<p>Africa</p>
+	<p>Asia</p>
+	<p>Europa</p>
+	<p>Australia</p>
+	<p>America de Norte</p>
+	<p>America de Sur</p>
+	<p>Antartida</p>
+	<p>Polo Sur</p>
+	<p>Polo Oeste</p>
+	<p>Andromeda</p>
+	<p>Star Trek</p>
+	
+	<p id="practica1"></p>
+	<p id="practica2"></p>
+
+	<script>
+		var x = document.getElementsByTagName("p");	
+		document.getElementById("practica1").innerHTML = 'El primer parágrafo (indexado 1) es: ' + x[1].innerHTML;
+		
+		var y = document.getElementsByTagName("p");
+		document.getElementById("practica2").innerHTML = 'El ultimo parágrafo (indexado 11) es: ' + y[11].innerHTML;
+	</script>
+
+</body>
+</html>
