@@ -4,15 +4,12 @@
 	 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
  	</head>
 <body>
+	<img id="imagen" src="sonrisa.gif" width="300" height="200">
 
-<h1 id="inicio">Titulo 1</h1>
+	<script>
+		document.getElementById("imagen").src = "smile.jpg";
+	</script>
 
-<script>
-var elemento = document.getElementById("inicio");
-elemento.innerHTML = "Titulo 2";
-</script>
-
-<p>"Titulo 1" ha sido cambiado por "Titulo 2"</p>
-
+	<p>La imágen original "sonrisa" ha sido cambiada por la imágen "smile".</p>
 </body>
-</html> 
+</html>

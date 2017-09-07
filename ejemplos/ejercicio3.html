@@ -1,89 +1,79 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Ejercicio 3</title>
+	<title>Adivinar Número</title>
+	<style>
+		div, p{
+			display: inline;
+		}
+	</style>
 	<script type="text/javascript">
 		//iniciar variables
-		var cuenta = 20;
+		var cuenta = 5;
         var intentos;
         var numero;
-        string mensaje;
+        //string mensaje;
 
-		var intervalo = setInterval(function(){
-			//mientras que cuenta sea mayor a 0 cambia el texto de la capa miCuenta
-			if(cuenta > 1){
-				cuenta--;
-				document.getElementById("miCuenta").innerHTML = cuenta;
-			}else{
-				//clearInterval(intervalo);
-				document.getElementById("miCuenta").innerHTML = "Moises el más feo de la clase!";
-			}
-		},1000);
-/*
-        ///////////////////////////////////////////////////
-        string mensaje1 = "Has acertado!";
-        string mensaje2 = "Has perdido";
+        function iniciar(){
+            //var cuenta = document.getElementById("segundos").value;
 
-        function aleatorio(){
-            var numAlea = document.getElementById("numero").value;
-            numAlea.innerHTML = Math.floor((Math.random() * 10) + 1);
+            var intervalo = setInterval(function(){
+                //mientras que cuenta sea mayor a 0 cambia el texto de la capa miCuenta
+                if(cuenta > 1){
+                    cuenta--;
+					document.getElementById("cuenta").style.color = "blue";
+					document.getElementById("cuenta").style.fontSize = "xx-large";
+                    document.getElementById("cuenta").innerHTML = cuenta;
+                }else{
+                    //clearInterval(intervalo);
+					document.getElementById("cuenta").style.color = "red";
+					document.getElementById("cuenta").style.fontSize = "xx-large";
+                    document.getElementById("cuenta").innerHTML = "Cuenta finalizada!";
+                }
+            }, 1000);
         }
 
-        //////////////////////////////////////////////////////////
-
-        function mensaje(){
-            if(aleatorio = true){
-                console.log(mensaje1);
-            }else{
-                cosole.log(mensaje2);
-            }
-        }*/
+		//función de sacar número aleatorio
+        function aleatorio(){
+            var numAleatorio = document.getElementById("numero").value;
+            numAleatorio.innerHTML = Math.floor((Math.random() * 30) + 1);
+		}
+		
+		
+		
+		//función de comprobar los números
+		function comprobar(){
+			var numIntroducido = document.getElementById("number").value;
+			
+			if(numIntroducido == numAleatorio){
+				document.getElementById("mensaje").innerHTML = "Has acertado";					
+			}else{
+				document.getElementById("mensaje").innerHTML = "Has perdido";
+			}
+		}
+		
+		if(cuenta == 0){
+			document.getElementById("respuestaFinal").innerHTML = numAleatorio;
+		}
 	</script>
 </head>
 <body>
-    <h5>La cuenta atras empieza al pulsar OK (tienes 20 segundos para adivinar el número):</h5>
-    <div id="iniciar"><input type="button" id="Ok" value="OK" onclick="cuenta()"/> </div>
-    <p>Tiempo restante:<div id="cuenta">20</div></p>
-    <p>-----------------------------------------------------------------------</p>
-<!--
-    <p>Adivina (introduce un número): </p>
-    <input type="number" id="numero" value="numero"/>
-    <input type="button" id="Ok" value="OK" onclick="adivinar()"/>
-    <p>-----------------------------------------------------------------------</p>
-
-    <div id="mensaje"></div>
--->
+    <h5>La cuenta atras empieza al pulsar Empezar (tienes 20 segundos para adivinar el número):</h5>
+	<h5>Piensa en un número de 1 a 30</h5>
+    <div id="iniciar">
+		<input type="button" id="Ok" value="Empezar" onclick="iniciar()"/> 
+		<input type="number" id="number" />
+		<input type="button" id="respuesta" value="Respuesta" onclick="comprobar()"/>
+	</div>
+    <p>Tiempo restante:</p>
+	<div id="cuenta">20</div><br/>
+	<div id="respuestaFinal"></div>
+	<div id="mensaje"></div><br/>
 </body>
 </html>
-<!--
-	
-Skip to content
-This repository
+-->
 
-    Pull requests
-    Issues
-    Gist
-
-    @BrandConstantin
-
-1
-2
-
-    1
-
-CarlosJuradoMoreno/JavaScript
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Wiki
-Pulse
-Graphs
-JavaScript/Adivina.html
-9ddc2f3 38 minutes ago
-Carlos Jurado Moreno Adivina
-88 lines (79 sloc) 2.49 KB
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -170,9 +160,3 @@ Carlos Jurado Moreno Adivina
 	
 </body>
 </html>
-
-    Contact GitHub API Training Shop Blog About 
-
-    © 2016 GitHub, Inc. Terms Privacy Security Status Help 
-
--->

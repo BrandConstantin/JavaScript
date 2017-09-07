@@ -2,16 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head> 
 	 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>Funciones</title>
+		<script>
+			function pinchar(){
+				document.getElementById('id1').style.color = 'red';
+			}
+	</script>
  	</head>
 <body>
+	<h1 id="id1">Cambio Color</h1>
 
-<img id="imagen" src="sonrisa.gif" width="200" height="150">
-
-<script>
-document.getElementById("imagen").src = "montanias.jpg";
-</script>
-
-<p>La imágen original "sonrisa" ha sido cambiada por la imágen "montanias".</p>
-
+	<button type="button" onclick="pinchar()">Pinchame!</button>
 </body>
 </html>

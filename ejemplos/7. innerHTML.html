@@ -4,17 +4,12 @@
 	 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
  	</head>
 <body>
+	<p id="p1">Hola Mundo</p>
 
-<p id="t1">Texto 1</p>
-<p id="t2">Texto 2</p>
+	<script>
+		document.getElementById("p1").innerHTML = "Mundo, Hola!";
+	</script>
 
-<script>
-document.getElementById("t2").style.color = "blue";
-document.getElementById("t2").style.fontFamily = "Arial";
-document.getElementById("p2").style.fontSize = "larger";
-</script>
-
-<p>Texto cambiado por script.</p>
-
+	<p>La fraze ha sido cambiada por el script.</p>
 </body>
 </html>

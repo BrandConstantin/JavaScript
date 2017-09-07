@@ -2,11 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Ejercicio 2</title>
+	<title>Countdown timer</title>
 	<script type="text/javascript">
-		//variable inicial de la cuenta
-		var numero;
-
         function iniciar(){
             var cuenta = document.getElementById("segundos").value;
 
@@ -14,17 +11,21 @@
                 //mientras que cuenta sea mayor a 0 cambia el texto de la capa miCuenta
                 if(cuenta > 1){
                     cuenta--;
+					document.getElementById("cuenta").style.color = "blue";
+					document.getElementById("cuenta").style.fontSize = "xx-large";
                     document.getElementById("cuenta").innerHTML = cuenta;
-                }else if(cuenta <= 1){
+                }else{
                     //clearInterval(intervalo);
+					document.getElementById("cuenta").style.color = "red";
+					document.getElementById("cuenta").style.fontSize = "xx-large";
                     document.getElementById("cuenta").innerHTML = "Cuenta finalizada!";
                 }
-            },1000);
+            }, 1000);
         }
 	</script>
 </head>
 <body>
-    <p>Introduce un número: </p>
+    <p>Introduce un número para empezar la cuenta atras: </p>
     <input type="number" id="segundos"/>
     <input type="button" id="Ok" value="OK" onclick="iniciar()"/>
     <div id="cuenta"></div>

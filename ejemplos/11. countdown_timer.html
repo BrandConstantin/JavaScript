@@ -2,23 +2,28 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Ejercicio 1</title>
+	<title>Countdown timer</title>
 	<script type="text/javascript">
 		//variable inicial de la cuenta
 		var cuenta = 10;
+		
 		var intervalo = setInterval(function(){
 			//mientras que cuenta sea mayor a 0 cambia el texto de la capa miCuenta
 			if(cuenta > 1){
 				cuenta--;
+				document.getElementById("miCuenta").style.color = "blue";
+				document.getElementById("miCuenta").style.fontSize = "xx-large";
 				document.getElementById("miCuenta").innerHTML = cuenta;
 			}else{
 				//clearInterval(intervalo);
-				document.getElementById("miCuenta").innerHTML = "Moises el más feo de la clase!";
+				document.getElementById("miCuenta").style.color = "red";
+				document.getElementById("miCuenta").style.fontSize = "xx-large";
+				document.getElementById("miCuenta").innerHTML = "Happy New Year!";
 			}
-		},1000);
+		}, 1500);
 	</script>
 </head>
 <body>
-<div id="miCuenta">10</div>
+	<div id="miCuenta"><h2>10</h2></div>
 </body>
 </html>

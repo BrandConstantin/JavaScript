@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head> 
+	 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>querySelectorAll</title>
+	</head>
+<body>
+	<p class="intro">Africa</p>
+	<p class="intro">Asia</p>
+	<p class="intro">Europa</p>
+	<p class="intro">Australia</p>
+	<p class="intro">America de Norte</p>
+	<p class="intro">America de Sur</p>
+	<p class="intro">Antartida</p>
+	<p class="intro">Polo Sur</p>
+	<p class="intro">Polo Oeste</p>
+	<p class="intro">Andromeda</p>
+	<p class="intro">Star Trek</p>
+	<p class="intro">Este ejemplo demuestra el método <b>querySelectorAll</b>.</p>
+
+	<p id="practica"></p>
+
+	<script>
+		var x = document.querySelectorAll("p.intro");
+
+		document.getElementById("practica").innerHTML = 'El paragrafo (indexado 5) con clase="intro" es: ' + x[5].innerHTML;
+	</script>
+</body>
+</html>
