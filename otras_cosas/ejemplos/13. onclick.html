@@ -2,10 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head> 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<script>
+		function pincha(){
+			document.getElementById("h2").innerHTML = "La misma función que la de arriba";
+		}
+		
+		function cambiaTexto(id) {
+			id.innerHTML = "Otra función igual";
+		}
+	</script>
   </head>
 <body>
 
 <h1 onclick="this.innerHTML='Que has echo!'">Pincha aqui!</h1>
+<h2 id="h2" onclick="pincha()">Pincha aqui!</h2>
+<h1 onclick="cambiaTexto(this)">Pincha aqui!</h1>
 
 </body>
 </html>

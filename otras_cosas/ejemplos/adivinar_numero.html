@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Adivina el Numero</title>
+	<meta charset="utf-8">
+</head>
+	<script type="text/javascript">
+	var numero = 30;
+	var intervalo;
+	var intentos = 0;
+	
+	function iniciar(){
+		document.getElementById("tiempo").innerHTML = "Tiempo restante: ";
+		//cuando se pulsa el boton de start se deshabilita el boton
+		document.getElementById("start").disabled = true;
+		document.getElementById("intentos").innerHTML = intentos;
+
+		intervalo = setInterval(function(){
+			if(numero >= 0){
+				document.getElementById("numero").style.color = "blue";
+				document.getElementById("numero").style.fontSize = "xx-large";
+				document.getElementById("numero").innerHTML = numero;
+				numero--;
+			}else {
+				document.getElementById("numero").style.color = "red";
+				document.getElementById("numero").style.fontSize = "xx-large";
+				document.getElementById("numero").innerHTML = "Cuenta Terminada";
+				document.getElementById("mensaje").innerHTML = "El número era " + aleatorio;
+				//si el tiempo finaliza se deshabilita los demas botones
+				document.getElementById("numIntrod").disabled = true;
+				document.getElementById("compruebaNum").disabled = true;
+				clearInterval(intervalo);
+			}
+		}, 1000);
+		
+		//los dos botones se habilitan una vez que empieza la cuenta atras
+		document.getElementById("numIntrod").disabled = false;
+		document.getElementById("compruebaNum").disabled = false;
+	}
+	
+	//num aleatorio 
+	var aleatorio = Math.floor((Math.random() * 30) + 1);
+	
+	//Comprueba cada vez que se pulsa el boton, el si se acierta el numero, aumenta contador
+	function comprobar(){
+		limpiar();
+		
+		if(document.getElementById("numIntrod").value == aleatorio){
+			document.getElementById("mensaje").style.color = "blue";
+			document.getElementById("mensaje").style.fontSize = "x-large";
+			document.getElementById("mensaje").innerHTML = "Enhorabuena acertaste!";
+			//si se aciertan los números se deshabilita los botones
+			document.getElementById("numIntrod").disabled = true;
+			document.getElementById("compruebaNum").disabled = true;
+			clearInterval(intervalo);
+			intentos++;
+			document.getElementById("intentos").innerHTML = intentos;
+		}else{		//Fallo
+			document.getElementById("mensaje").style.color = "blue";
+			document.getElementById("mensaje").style.fontSize = "x-large";
+			document.getElementById("mensaje").innerHTML = "Intentalo de nuevo";
+			document.getElementById("numIntrod").value = " ";
+			intentos++;
+			document.getElementById("intentos").innerHTML = intentos;
+		}
+	}
+	
+	//Limpiar
+	function limpiar(){
+		document.getElementById("mensaje").innerHTML = "";
+		//document.getElementById("mensaje").innerHTML = "";
+	}
+	
+	//Resetea todo
+	function restart(){
+		document.getElementById("numIntrod").disabled = true;
+		document.getElementById("compruebaNum").disabled = true;
+		document.getElementById("tiempo").innerHTML = "";
+		document.getElementById("numero").innerHTML = "";
+		document.getElementById("start").disabled = false;
+		
+		clearInterval(intervalo);
+		aleatorio = Math.floor((Math.random()* 30) + 1);
+		numero = 30;
+		intentos = 0;
+		
+		limpiar();
+	}
+	
+	
+	</script>
+<body>
+	<h5>Tienes 20 segundos para adivinar un número de 1 a 30</h5>
+	<h5>La cuenta atras empieza pulsando \"Empezar\"</h5>
+	
+	<input type="button" id="start" value="Empezar" onclick=iniciar()>
+	<span id="tiempo"></span>	
+	<span id="numero"></span> 
+	<br>
+	
+	<span>Intentos: </span><span id="intentos"></span><br>
+	<input type="number" id="numIntrod" disabled="true">
+	<input type="button" id="compruebaNum" value="Comprueba" onclick=comprobar() disabled="true">
+
+	<h4 id="mensaje"></h4>
+
+	<input type="button" value="Otra vez" onclick=restart()>
+</body>
+</html>

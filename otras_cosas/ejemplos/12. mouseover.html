@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	  <script>
+			function ante(obj) {
+				obj.innerHTML = "Onmouseover (cuando se pasa el ratón por encima)";
+			}
+
+			function despues(obj) {
+				obj.innerHTML = "Onmouseout (cuando se aleja el raton de encima)";
+			}
+		</script>
+  </head>
+<body>
+	<div onmouseover="ante(this)" onmouseout="despues(this)">
+		Pasa con el ratón por encima!
+	</div>
+</body>
+</html> 
