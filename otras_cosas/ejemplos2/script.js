@@ -11,7 +11,7 @@ function nuevoElemento(){
 	elemento.appendChild(nuevoP);	
 }
 
-//create element before
+//2. create element before
 function nuevoColor(){
 	//Crear nuevo elemento de tipo p
 	var nuevoC = document.createElement("p");
@@ -25,4 +25,26 @@ function nuevoColor(){
 	var parrafo = document.getElementById("c2");
 	//añadimos como hijo de la capa justo antes del parrafo
 	element.insertBefore(nuevoC, parrafo);
+}
+
+//3. onmouseover
+//comentado para que funcione el ejercicio de abajo
+/*window.onload = function(){
+    document.getElementById("imagen").onmouseover = cambiar;
+    document.getElementById("imagen").onmouseout = cambiar;
+}
+
+function cambiar(){
+    document.getElementById("imagen").src = (document.getElementById("imagen").src.match("flor"))?"img/arbol.jpeg":"img/flor.png";   
+}
+*/
+//4. onclick
+window.onload = function(){
+	document.getElementById("frase").onclick = cambiarTexto;   
+}
+
+function cambiarTexto(){
+	var elemento = document.getElementById("frase");
+	elemento.style.color = "red";
+	elemento.innerHTML = "cambiando de color ....";
 }

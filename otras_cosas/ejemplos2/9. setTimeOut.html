@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="esp">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>setTimeout</title>
+
+	<script type="text/javascript">
+		function moverVentana(){
+			miVentana.moveBy(5, 5);
+			i++;
+			
+			if(i < 20){
+				setTimeout('moverVentana()', 100);
+			}else{
+				miVentana.close();
+			}
+		}
+    </script>
+</head>
+
+<body>
+	<script type="text/javascript">
+		var opciones = "left = 100, top = 100, width = 250, height = 150", i = 0;
+
+		miVentana = window.open("", "", opciones);
+		miVentana.document.write("Prueba para abrir ventanas");
+		miVentana.moveTo(400, 100);
+		moverVentana();
+	</script>
+</body>
+</html>
