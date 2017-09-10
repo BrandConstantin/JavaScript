@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<style>
+			#contenedor {
+			  width: 400px;
+			  height: 400px;
+			  position: relative;
+			  background: yellow;
+			}
+			
+			#animacion {
+			  width: 50px;
+			  height: 50px;
+			  position: absolute;
+			  background-color: red;
+			}
+		</style>
+		<script>
+			function miMovimiento() {
+				var elemento = document.getElementById("animacion");   
+				//posicion de donde empieza goLeft moverse
+				var posicion = 0;
+				var id = setInterval(mover, 7);
+				var goLeft = 0;
+				var goTop = 0;
+
+				function mover() {
+					if ((goLeft == 0) && (goTop == 1)) {
+					  clearInterval(id);
+					  //de izquierda a derecha
+					} else if((goLeft < 350) && (goTop == 0)){
+					  goLeft++;
+					  elemento.style.left = goLeft + 'px';					  
+					  //de arriba abajo
+					} else if((goLeft == 350) && (goTop < 350)){
+					  goTop++;
+					  elemento.style.top = goTop + 'px';
+					  //de derecha a izquierda
+					}else if((goLeft > 0) && (goTop == 350)){
+					  goLeft--;
+					  elemento.style.left = goLeft + 'px';
+					  //de abajo arriba
+					}else if((goLeft == 0) && (goTop > 0)){
+					  goTop--;
+					  elemento.style.top = goTop + 'px';
+					}									
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+	<button onclick="miMovimiento()">Pinchame</button>
+	<br/><br/>
+
+	<div id ="contenedor">
+		<div id ="animacion"></div>
+	</div>
+
+	</body>
+</html>
