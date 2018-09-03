@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <video class="bostonVideo" width="500" controls>
+                <source src="boston.mp4" type="video/mp4">
+            </video>
+    <script>
+        "use strict"
+
+        const video = document.querySelector('.bostonVideo');
+
+        video.addEventListener("ended", function() {
+            alert("MENSAJE \n\n El video ha terminado");
+        });
+
+        video.addEventListener("ended", function() {
+            let resultado = confirm("Quieres volver a ver el video?");
+
+            if (resultado) {
+                video.play();
+            } else {
+                window.location = "http://www.google.com";
+            }
+        });
+
+        video.addEventListener("ended", function() {
+            let email = prompt("Escribe tu correo para poder ver el video de nuevo", "data@info.com");
+
+            if (email == null || email == "") {
+                console.log("Sin datos");
+            } else {
+                console.log(email);
+            }
+        });
+    </script>
+</body>
+
+</html>
