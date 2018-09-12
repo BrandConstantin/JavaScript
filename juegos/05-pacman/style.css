@@ -1,0 +1,111 @@
+body {
+    margin: 50px;
+    font-family: serif;
+    color: #000;
+    z-index: -100;
+    background-color: #000;
+}
+
+#controlers {
+    width: auto;
+    height: 50px;
+    border: 2px solid red;
+    margin-bottom: 10px;
+}
+
+#buttonForNew {
+    position: relative;
+    left: 90%;
+    top: 15px;
+    background-color: #000;
+    color: aliceblue;
+}
+
+#buttonForNew:disabled {
+    background-color: aliceblue;
+    color: #000;
+    font-size: 14px;
+}
+
+#gameOver {
+    display: none;
+    color: #fff;
+    font-size: 23px;
+    margin-left: 43%;
+}
+
+#level {
+    position: absolute;
+    top: 65px;
+    left: 5%;
+    color: #fff;
+    font-size: 13px;
+}
+
+@media only screen and (min-width:960px) {
+    #container {
+        max-width: 99%;
+        max-height: 400px;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    #container {
+        max-width: 99%;
+        max-height: 500px;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width:2000px) {
+    #container {
+        max-width: 99%;
+        max-height: 700px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-device-width:480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+}
+
+@media only screen and (device-width:768px) {
+    /* default iPad screens */
+}
+
+
+/* different techniques for iPad screening */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* For landscape layouts only */
+}
+
+#pacman {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(images/pacman.png);
+    left: 560px;
+    top: 360px;
+    z-index: 1;
+}
+
+#ghost {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(images/ghost.png);
+    z-index: 2;
+}
+
+.cherry {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(images/cherry.png);
+}

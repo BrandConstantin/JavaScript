@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var persona = {
+            dni: '',
+            nombre: '',
+            amigos: null,
+
+            init: function(dni, nombre) {
+                this.dni = dni;
+                this.nombre = nombre;
+                this.amigos = new Array();
+
+                return this;
+            },
+
+            saludar: function() {
+                console.log('Hola me llamo ' + this.nombre);
+            }
+        };
+
+        /*
+         *
+         * este métodos no es muy recomendable
+         * 
+         *
+         * var estudiante = Object.create(persona);
+         * estudiante.numeroMatricula = '';
+         * estudiante.init = function(dni, nombre, numeroMatricula) {
+         *    persona.init.call(this, dni, nombre);
+         *    this.numeroMatricula = numeroMatricula;
+         * 
+         *    return this;
+         * }
+         * 
+         * estudiante.estudiar = function() {
+         *    console.log('estudiando > ' + this.numeroMatricula);
+         * }
+         */
+
+        var estudiante = Object.create(persona, {
+            numeroMatricula: {
+                get: function() {
+                    return this.value;
+                },
+                set: function(newValue) {
+                    this.value = newValue;
+                }
+            },
+            init: {
+                value: function(dni, nombre, numeroMatricula) {
+                    persona.init.call(this, dni, nombre);
+                    this.numeroMatricula = numeroMatricula;
+
+                    return this;
+                }
+            },
+            estudiar: {
+                value: function() {
+                    console.log('estudiando > ' + this.numeroMatricula);
+                }
+            }
+        });
+
+        var yo = Object.create(estudiante).init('343435g', 'Laura', '5');
+        yo.saludar();
+        yo.numeroMatricula = '2';
+        yo.estudiar();
+    </script>
+</body>
+
+</html>

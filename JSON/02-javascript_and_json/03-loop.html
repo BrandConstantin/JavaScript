@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Links</h4>
+
+    <ul id="links">
+
+    </ul>
+    <script>
+        //convert javascript to json
+        var info = {
+            "full_name": "Constantin Brindusoiu",
+            "title": "Staff Author",
+            "links": {
+                "linkedin": "http://linkedin.com",
+                "facebook": "http://facebook.com",
+                "youtube": "http://www.youtube.com",
+                "podcast": "http://feeds.feedburner.com",
+                "twitter": "http://twitter.com"
+            }
+        };
+
+        var output = "";
+
+        for (key in info.links) {
+            if (info.links.hasOwnProperty(key)) {
+                output += '<li>' +
+                    '<a href = "' + info.links[key] +
+                    '">' + key + '</a>' +
+                    '</li>';
+            }
+        }
+
+        var update = document.getElementById('links');
+        update.innerHTML = output;
+    </script>
+</body>
+
+</html>

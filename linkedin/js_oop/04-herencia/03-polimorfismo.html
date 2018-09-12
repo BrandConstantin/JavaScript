@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <scrip src="js/miapp.js"></scrip>
+    <scrip src="js/pantalla.js"></scrip>
+    <scrip src="js/pantalla_menu.js"></scrip>
+    <scrip src="js/pantalla_detalle.js"></scrip>
+    <script>
+        var app = new MiApp();
+        app.inicialzar();
+
+        console.log(app);
+        console.log(app.pantallaActual);
+
+        app.actualizarPantalla(MiApp.PANTALLA_DETALLE);
+        console.log(app.pantallaActual);
+    </script>
+</body>
+
+</html>

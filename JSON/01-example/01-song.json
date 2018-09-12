@@ -1,0 +1,9 @@
+{
+    "song": {
+        "title": "JSON Lullaby",
+        "artist": "The Instructors",
+        "musicians": [
+            "Jen Trainer", "John Teacher"
+        ]
+    }
+}

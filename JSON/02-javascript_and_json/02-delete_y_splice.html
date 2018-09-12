@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //convert javascript to json
+        var info = {
+            "full_name": "Constantin Brindusoiu",
+            "title": "Staff Author",
+            "links": [{
+                "linkedin": "http://linkedin.com"
+            }, {
+                "github": "http://github.com"
+            }, {
+                "youtube": "http://www.youtube.com"
+            }, {
+                "twitter": "http://twitter.com"
+            }]
+        };
+
+        delete(info.links[2]); //borra el link pero su indice queda en la memoria
+        info.links.splice(2, 2); //borra incluso el indice y "reorganiza" el array
+        info.links.push({
+                "facebook": "www.facebook.com"
+            }) //añade un elemento en el array
+    </script>
+</body>
+
+</html>

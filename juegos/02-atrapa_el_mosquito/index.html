@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atrapa el Mosquito</title>
+    <style>
+        div {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #container {
+            position: relative;
+            width: 99%;
+            height: 550px;
+        }
+        
+        #info,
+        #startButton {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            display: inline;
+        }
+        
+        #startButton {
+            float: right;
+            margin-right: 100px;
+            background-color: #164;
+            color: #fff;
+        }
+        
+        #startButton:disabled {
+            background-color: #d34;
+            color: #164;
+        }
+        
+        #game {
+            position: relative;
+            background-color: #164;
+            border: 2px solid red;
+            overflow: hidden;
+            width: 99%;
+            height: 550px;
+        }
+        
+        #level {
+            color: #d34;
+            font-size: 20px;
+        }
+        
+        #bebe {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            background: url("images/baby.png") no-repeat;
+        }
+        
+        #mosquito {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url("images/fly.png") no-repeat;
+        }
+        
+        #finish {
+            margin: 0 auto;
+            margin-left: 400px;
+            color: rgb(196, 13, 52);
+            font-size: 150px;
+        }
+        
+        .deadMosquito {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url("images/deadmosquito.png") no-repeat;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="buttons">
+            <button id="startButton" onclick="start()">START</button>
+        </div>
+        <div id="info">
+            <br> Nivel:
+            <span id="level"></span>
+        </div>
+        <div id="game">
+            <span id="finish"></span>
+        </div>
+    </div>
+</body>
+
+</html>

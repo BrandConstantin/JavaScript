@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Persona(dni, nombre) {
+            this.dni = dni;
+            this.nombre = nombre;
+            this.numeroPiernas = 2;
+        }
+
+        Persona.prototype.saludar = function() {
+            console.log(' Hola me llamo ' + this.nombre);
+        }
+
+        var yo = new Persona('153445u', 'Queen');
+        var tu = new Persona('223434k', 'ACDC');
+
+        Persona.prototype.numeroPiernas = 2;
+        Persona.prototype.prueba = function() {
+
+        }
+
+        console.log(yo);
+        console.log(tu);
+
+        yo.saludar();
+        tu.saludar();
+
+        Persona.prototype.numeroPiernas = 4;
+
+
+        console.log(yo);
+        console.log(tu);
+    </script>
+</body>
+
+</html>

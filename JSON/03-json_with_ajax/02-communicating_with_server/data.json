@@ -1,0 +1,11 @@
+dataHandler({
+    "full_name": "Constantin Brindusoiu",
+    "title": "Staff Author",
+    "links": [
+        { "linkedin": "http://linkedin.com" },
+        { "facebook": "http://facebook.com" },
+        { "podcast": "http://feeds.feedburner.com" },
+        { "twitter": "http://twitter.com" },
+        { "youtube": "http://www.youtube.com" }
+    ]
+});

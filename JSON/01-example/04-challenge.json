@@ -1,0 +1,29 @@
+{
+    "longitude": 47.60,
+    "latitude": 122.33,
+    "forecasts": [{
+            "date": "2018-09-05",
+            "description": "sunny",
+            "maxTemp": 25,
+            "minTemp": 20,
+            "windSpeed": 10,
+            "danger": false
+        },
+        {
+            "date": "2018-09-06",
+            "description": "overcast",
+            "maxTemp": 21,
+            "minTemp": 17,
+            "windSpeed": 15,
+            "danger": false
+        },
+        {
+            "date": "2018-09-07",
+            "description": "raining",
+            "maxTemp": 20,
+            "minTemp": 18,
+            "windSpeed": 13,
+            "danger": false
+        }
+    ]
+}

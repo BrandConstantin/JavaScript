@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Persona(dni, nombre) {
+            //variable local para acceder desde métodos publicos a privados y al reves
+            //var _this = this;
+            var edad = 0;
+            var edadParaSaludar = 1;
+
+            //propriedades públicas
+            this.dni = dni;
+            this.nombre = nombre;
+
+            //métodos que accedes a las propriedades o métodos privados aqui
+            //métodos privilegiados
+            this.getEdad = function() {
+                return edad;
+            }
+
+            this.setEdad = function(nuevaEdad) {
+                edad = nuevaEdad;
+            }
+
+            this.getEdadParaSaludar = function() {
+                return edadParaSaludar;
+            }
+
+        }
+
+        Persona.prototype.saludar = function(nombre) {
+            console.log(this.nombre + ' te saluda de nuevo ' + nombre);
+        }
+
+        Persona.prototype.crecer = function() {
+            this.setEdad(this.getEdad() + 1);
+
+            if (this.getEdad() >= this.getEdadParaSaludar) {
+                this.saludar('');
+            }
+        }
+
+        var yo = new Persona('2', 'Jesulina');
+        console.log(yo.edad);
+
+        yo.saludar('Pepito');
+        yo.crecer();
+    </script>
+</body>
+
+</html>
