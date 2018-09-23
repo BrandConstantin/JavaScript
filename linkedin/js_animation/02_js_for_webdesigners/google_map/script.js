@@ -1,5 +1,3 @@
-//var gMapAPIKey = 'AIzaSyDwfQXC18WPzj7jjEXeKIbGA7kQXpWF9eU';
-
 var map;
 
 function initMap() {
