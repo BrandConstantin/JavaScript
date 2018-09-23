@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>JS para diseñadores. Funciones</title>
+
+	<!-- Bootstrap 3 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<style type="text/css" media="screen">
+		.seleccionado {
+			background-color: #fc0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Valores devueltos por una función</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="resultado">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var capaResultado = document.getElementById('resultado');
+
+		function aRGB(hexadecimal) {
+			var valorHex;
+
+			if (hexadecimal.charAt(0)==="#") {
+				valorHex = hexadecimal.substring(1,7);
+			} else {
+				valorHex = hexadecimal;
+				hexadecimal = '#'+hexadecimal;
+			}
+
+			R = parseInt( valorHex.substring(0,2), 16 );
+			G = parseInt( valorHex.substring(2,4), 16 );
+			B = parseInt( valorHex.substring(4,6), 16 );
+
+			// Valor devuelto como cadena
+			// return 'El código hexadecimal <span style="background-color:'+hexadecimal+'">'+hexadecimal+'</span> en RGB es ('+R+', '+G+', '+B+')';
+
+			// Valores devueltos como array
+			// return [R, G, B];
+
+			// Valores devueltos como objeto
+			return {rojo: R, verde: G, azul: B};
+		}
+
+		// Para cuando devolvemos el valor como cadena
+		// capaResultado.innerHTML = aRGB('#FFCC00');
+
+		// Guardamos en la variable codigosColorRGB el resultado devuelto por la función, ya sea array u objeto
+		var codigosColorRGB = aRGB('#FFCC00');
+
+		// Mostramos por consola para el ejemplo que devuelve el valor como array
+		/*
+		console.log('Rojo: '+codigosColorRGB[0]);	
+		console.log('Verde: '+codigosColorRGB[1]);	
+		console.log('Azul: '+codigosColorRGB[2]);
+		*/
+
+		// Mostramos por consola para el ejemplo que devuelve el valor como objeto
+		console.log('Rojo: '+codigosColorRGB.rojo);	
+		console.log('Verde: '+codigosColorRGB.verde);	
+		console.log('Azul: '+codigosColorRGB.azul);
+	</script>
+</body>
+</html>

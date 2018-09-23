@@ -1,0 +1,14 @@
+#logo {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    background: url(../img/logo.png) no-repeat center center;
+    margin: 10px;
+}
+
+#contenedor{
+    background-color: #ccffcc;
+    border:1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
