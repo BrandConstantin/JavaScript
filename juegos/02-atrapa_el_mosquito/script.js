@@ -104,7 +104,7 @@ function finish() {
     mosquito.setAttribute("onclick", "");
 
     //muestro el mensaje de gameover
-    document.getElementById("finish").innerHTML = "GAMEOVER!!";
+    document.getElementById("finish").innerHTML = "GAME OVER!!";
 
     // se vuelve a habilitar el boton de start
     document.getElementById("startButton").disabled = false;

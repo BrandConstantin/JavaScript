@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*Reseteo de la página*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #cccbc8;
+}
+
+#container {
+    width: 100%;
+}
+
+
+/*
+MENÚ
+*/
+
+#acordeon {
+    /*colocación y forma del menú*/
+    background: #056a63;
+    width: 250px;
+    margin: 100px auto 0 auto;
+    color: white;
+    /*ejecto de sombra alrededor*/
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+
+#acordeon ul {
+    /*eliminando padding lateral*/
+    padding: 0px;
+    /*y espaciado entre apartados*/
+    margin: 0px;
+}
+
+
+/*estilos de menu principal*/
+
+#acordeon h3 {
+    font-size: 12px;
+    line-height: 34px;
+    padding: 0 10px;
+    /* hago que los elementos del menú salgan pegados*/
+    margin: 0px;
+    cursor: pointer;
+    /*este fondo es para cuando no hay gradiente*/
+    background: #02382d;
+    background: linear-gradient(#005041, #022211);
+}
+
+
+/*efecto luminoso en el texto de los cabeceros*/
+
+#acordeon h3:hover {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+
+/*spam para los iconos*/
+
+#acordeon h3 span {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+
+/*quitamos puntos a las listas*/
+
+#acordeon li {
+    list-style-type: none;
+}
+
+
+/*aspecto de los enlaces*/
+
+#acordeon ul ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 27px;
+    display: block;
+    padding: 0 15px;
+    /*hacemos que la transción sea suave*/
+    transition: all 0.15s;
+}
+
+
+/*animación sobre los enlaces*/
+
+#acordeon ul ul li a:hover {
+    background: #013636;
+    border-left: 5px solid lightgreen;
+    transition: all 0.55s;
+}
+
+
+/*Lets hide the non active LIs by default*/
+
+#acordeon ul ul {
+    display: none;
+}
+
+#acordeon li.active ul {
+    display: block;
+}
+
+#acordeon h3 .icon-ap1:before {
+    font-family: FontAwesome;
+    content: "\f0f7";
+}
+
+#acordeon h3 .icon-ap2:before {
+    font-family: FontAwesome;
+    content: "\f085";
+}
+
+#acordeon h3 .icon-ap3:before {
+    font-family: FontAwesome;
+    content: "\f0e8";
+}
+
+#acordeon h3 .icon-ap4:before {
+    font-family: FontAwesome;
+    content: "\f007";
+}
+
+
+/*
+
+*/
+
+footer {
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #1a313b;
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+    position: absolute;
+    bottom: 0px;
+}
+
+p {
+    padding-right: 20px;
+}

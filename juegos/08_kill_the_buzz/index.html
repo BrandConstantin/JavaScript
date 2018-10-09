@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Matar la abeja</title>
+    <script type="text/javascript" src="main.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="buzz" style="position:absolute; top:0px; left:0px; visibility:hidden; z-index:10">
+        <a href="javascript:killbuzz()"><img src="img/abeja.gif" alt="abeja" style="width:52px; height:51px; border:0"></a>
+    </div>
+
+    <!-- Pausar el juego 
+    <p><a href="javascript:void(0)" onclick="abejaCazada()">PARAR</a></p>-->
+    <button onclick="killbuzz()">STOP</button>
+
+    <!-- Reiniciar el vuelo tras haberlo parado 
+    <p><a href="javascript:void(0)" onclick="start()">VOLAR</a></p>-->
+    <button id="start" onclick="start()">START</button>
+</body>
+
+</html>

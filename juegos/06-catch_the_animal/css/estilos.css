@@ -1,0 +1,43 @@
+#container {
+    width: 99%;
+    height: 75%;
+    position: absolute;
+    background-color: lightskyblue;
+    top: 120px;
+}
+
+button {
+    float: right;
+    display: inline;
+    background-color: black;
+    color: aliceblue;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.agua {
+    position: absolute;
+}
+
+.animal {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#lifes {
+    position: absolute;
+}
+
+.star {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    background-image: url(img/star.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline;
+}

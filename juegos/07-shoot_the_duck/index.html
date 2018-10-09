@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container {}
+        
+        .duck {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            /*background-image: url(img/pato_left.png);*/
+        }
+        
+        #lake {
+            top: 120px;
+            width: 99%;
+            height: 500px;
+            background-image: url(img/lago.jpg);
+            background-repeat: repeat-x;
+            overflow: hidden;
+        }
+        
+        #start {
+            background-color: black;
+            color: aliceblue;
+        }
+        
+        #start:disabled {
+            background-color: aliceblue;
+            color: black;
+        }
+        
+        #game_over {
+            margin: 0 auto;
+            margin-left: 400px;
+            color: rgb(196, 13, 52);
+            font-size: 90px;
+        }
+    </style>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+
+    <body>
+        <div>
+            <button id="start" onclick="start()">START</button> <br/>
+            <p>Disparados: <span id="message"></span></p>
+            <p>Eliberados: <span id="free"></span></p>
+            <p>Nivel: <span id="level"></span></p>
+            <div id="lake">
+                <span id="game_over"></span>
+            </div>
+        </div>
+    </body>
+
+</html>

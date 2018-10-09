@@ -1,0 +1,80 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    text-align: center;
+    color: #fff;
+    background-color: #566c79;
+}
+
+
+/*  contenedor principal  */
+
+#container {
+    margin: 0 auto;
+    display: block;
+    width: 1000px;
+}
+
+.parrilla ul {
+    list-style-type: none;
+    margin: 0 auto;
+    width: 780px;
+    padding: 0px;
+    padding-top: 19px;
+}
+
+.parrilla li {
+    margin: 4px;
+    padding: 4px;
+    padding-bottom: 1px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    width: 178px;
+    height: 185px;
+    float: left;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-box-shadow: 4px 4px 8px;
+    box-shadow: 4px 4px 8px #000;
+    -webkit-box-shadow: 4px 4px 8px #000;
+}
+
+.parrilla li a {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    color: #666666;
+    text-decoration: none;
+}
+
+
+/*  específicos de aplicaciones con iconos pequeños  */
+
+.parrilla .icoPeq {
+    width: 140px;
+    height: 186px;
+}
+
+.checkIcoPeq {
+    display: block;
+    padding: 4px;
+    height: 16px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+}
+
+.parrilla li label {
+    float: left;
+    font-size: 10px;
+    padding-top: 2px;
+    height: 30px;
+    width: 100px;
+}
+
+.parrilla li input {
+    display: block;
+    float: right;
+}
