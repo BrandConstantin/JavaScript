@@ -5,6 +5,7 @@ var goblin;
 var spider;
 var building;
 var id1, id2;
+var explosionNuclear;
 
 /* disabled/enabled the buttons */
 function go() {
@@ -62,8 +63,6 @@ function createSpiderman() {
     spider.style.left = 200 + "px";
     spider.style.top = getRand(120, 500) + "px";
     document.getElementById("container").appendChild(spider);
-
-    shoot();
 }
 
 /* crete the goblin */
@@ -80,14 +79,14 @@ function createGoblin() {
 }
 
 /* goblin drop bombs */
-// create the bomb
+// create the bombs
 function createBomb() {
     //create the bombs
     var bomb = document.createElement("img");
     //bomb = getRand(120, 500) + "px";
     bomb.setAttribute("src", "img/bomb.png");
     bomb.className = "bomb";
-    bomb.id = "idBomb" + counter;
+    bomb.id = "idBomb";
     //shoot the bomb from the position of the goblin
     bomb.style.left = goblin.offsetLeft + (-10) + "px";
     bomb.style.top = goblin.offsetTop + 30 + "px";
@@ -97,11 +96,30 @@ function createBomb() {
     dropBomb(bomb);
 }
 
+/* function to create the spiderweb */
+function createSpiderweb() {
+    //create the bombs
+    var spiderweb = document.createElement("img");
+    spiderweb.setAttribute("src", "img/telarania.jpg");
+    spiderweb.className = "spiderweb";
+    spiderweb.id = "idSpiderweb";
+    //shoot the bomb from the position of the goblin
+    spiderweb.style.left = spider.offsetLeft + 40 + "px";
+    spiderweb.style.top = spider.offsetTop + 70 + "px";
+
+    counter++;
+
+    //document.getElementById("container").appendChild(spiderweb);
+
+    dropSpiderweb(spiderweb);
+}
+
 // drop the bomb
 function dropBomb(bomb) {
     //movement the bomb
     var bombInterval = setInterval(function() {
-        var building = document.getElementById("idBuilding");
+        building = document.getElementById("idBuilding");
+
         //var bomb = document.getElementById("idBomb");
 
         //obtengo la posicón de los dos elementos
@@ -122,6 +140,74 @@ function dropBomb(bomb) {
 
     }, 5);
     document.getElementById("container").appendChild(bomb);
+}
+
+function dropSpiderweb(spiderweb) {
+    //movement the bomb
+    var spiderWebInterval = setInterval(function() {
+        //obtengo la posicón de los dos elementos
+        globin = document.getElementById("idGoblin");
+        var izqGlobin = globin.offsetLeft;
+        var topGlobin = globin.offsetTop;
+        spiderweb = document.getElementById("idSpiderweb");
+        var izqSpiderweb = spiderweb.offsetLeft;
+        var topSpiderweb = spiderweb.offsetTop;
+        /*bomb = document.getElementById("idBomb");
+        var izqBomb = bomb.offsetLeft;
+        var topBomb = bomb.offsetTop;*/
+
+        if (globin) {
+            if (izqGlobin > izqSpiderweb) {
+                izqSpiderweb++;
+                spiderweb.style.left = izqSpiderweb + "px";
+            } else {
+                izqSpiderweb--;
+                spiderweb.style.left = izqSpiderweb + "px";
+            }
+
+            if (topGlobin > topSpiderweb) {
+                topSpiderweb++;
+                spiderweb.style.top = topSpiderweb + "px";
+            } else {
+                topSpiderweb--;
+                spiderweb.style.top = topSpiderweb + "px";
+            }
+        }
+
+        /*if (!bomb) {
+            izqBomb = screen.width;
+            topBomb = screen.height;
+
+            spiderweb.style.left = izqBomb + "px";
+            spiderweb.style.top = topBomb + "px";
+            spiderweb.parentNode.removeChild(spiderweb);
+        }
+
+        if (bomb) {
+            if (izqBomb > izqSpiderweb) {
+                izqSpiderweb++;
+                spiderweb.style.left = izqSpiderweb + "px";
+            } else {
+                izqSpiderweb--;
+                spiderweb.style.left = izqSpiderweb + "px";
+            }
+
+            if (topBomb > topSpiderweb) {
+                topSpiderweb++;
+                spiderweb.style.top = topSpiderweb + "px";
+            } else if (topBomb > topSpiderweb) {
+                topSpiderweb--;
+                spiderweb.style.top = topSpiderweb + "px";
+            }
+        }*/
+
+        // si izq y top son iguales el juego a finalizado
+        if (izqSpiderweb == izqGlobin) {
+            explosion2(spiderweb, izqGlobin, topGlobin);
+        }
+
+    }, 5);
+    document.getElementById("container").appendChild(spiderweb);
 }
 
 //window.addEventListener("keydown", moveKey, false);
@@ -160,7 +246,7 @@ function space(event) {
 
 function letterV(event) {
     if (event.keyCode == 86) {
-        shoot();
+        createSpiderweb();
     }
 }
 
@@ -233,13 +319,6 @@ function stopMove() {
 function explosion(bomb, izqBomb, topBomb) {
     bomb.parentNode.removeChild(bomb);
 
-    var idBomb = bomb.id;
-    if (idBomb != "idBomb4") {
-        randomGoblin();
-    } else {
-        finish();
-    }
-
     var izqExplosion = izqBomb;
     var topExplosion = topBomb;
 
@@ -251,8 +330,53 @@ function explosion(bomb, izqBomb, topBomb) {
     explosion.style.left = izqExplosion + "px";
     explosion.style.top = topExplosion + "px";
 
+
     // cambiar el lugar del goblin
     document.getElementById("container").appendChild(explosion);
+
+    var cadena = explosion.id,
+        inicio = 11,
+        fin = 20,
+        totalBombsDroped = cadena.substring(inicio, fin);
+
+    console.log(totalBombsDroped); // la consola devolverá: texto
+    if (totalBombsDroped <= 4) {
+        randomGoblin();
+    } else {
+        finish();
+    }
+    //console.log(explosion.offsetLeft, explosion.style.top);
+}
+
+function explosion2(spiderweb, izqGlobin, topGlobin) {
+    spiderweb.parentNode.removeChild(spiderweb);
+
+    var izqExplosion = izqGlobin;
+    var topExplosion = topGlobin;
+
+    var explosion = document.createElement("img");
+    explosion.setAttribute("src", "img/explosion.png");
+    explosion.className = "explosion";
+    explosion.id = "idExplosion" + counter;
+
+    explosion.style.left = izqExplosion + "px";
+    explosion.style.top = topExplosion + "px";
+
+
+    // cambiar el lugar del goblin
+    document.getElementById("container").appendChild(explosion);
+
+    var cadena = explosion.id,
+        inicio = 11,
+        fin = 20,
+        totalBombsDroped = cadena.substring(inicio, fin);
+
+    console.log(totalBombsDroped); // la consola devolverá: texto
+    if (totalBombsDroped <= 4) {
+        randomGoblin();
+    } else {
+        finish();
+    }
     //console.log(explosion.offsetLeft, explosion.style.top);
 }
 
@@ -262,19 +386,33 @@ function finish() {
 
     document.getElementById("message").innerHTML = "Game Over!";
 
-    document.getElementById("startGame").disabled = false;
-    document.getElementById("startGame").innerHTML = "Restart Game!";
-
     goblin.parentNode.removeChild(goblin);
     spider.parentNode.removeChild(spider);
-    building.parentNode.removeChild(building);
-    explosion.parentNode.removeChild(explosion);
+    //building.parentNode.removeChild(building);
 
-    /*var totalExplosion = ["idExplosion0", "idExplosion1", "idExplosion2", "idExplosion3", "idExplosion4"];
-    //y los elimino
-    for (i = 0; i < totalExplosion.length; i++) {
-        totalExplosion[i].parentNode.removeChild(totalExplosion[i]);
+    /*var explosion = document.querySelectorAll(".explosion");
+    var totalExpl = [];
+    totalExpl += explosion;
+    for (i = 0; i <= totalExpl.length; i++) {
+        explosion[i].parentNode.removeChild(explosion[i]);
     }*/
+
+    createNuclearExplosion();
+}
+
+/* explosion nuclear */
+function createNuclearExplosion() {
+    explosionNuclear = document.createElement("div");
+    //assign a class, a name div, a style, and put to the container
+    explosionNuclear.className = "explosion-nuclear";
+    explosionNuclear.id = "idExplosionNuclear" + counter;
+    explosionNuclear.style.left = 35 + "px";
+    explosionNuclear.style.top = 100 + "px";
+
+    // cambiar el lugar del goblin
+    document.getElementById("container").appendChild(explosionNuclear);
+
+    //console.log(explosionNuclear);
 }
 
 /* move the goblin */
@@ -282,64 +420,3 @@ function randomGoblin() {
     goblin.style.left = (screenWidth - 225) + "px";
     goblin.style.top = getRand(120, 500) + "px";
 }
-
-/* función de disparar al goblin */
-function shoot() {
-    createSpiderweb();
-
-    /*goblin = document.getElementById("goblin");
-    var izqExplosion = izqBomb;
-    var topExplosion = topBomb;
-
-    var explosion = document.createElement("img");
-    explosion.setAttribute("src", "img/explosion.png");
-    explosion.className = "explosion";
-    explosion.id = "idExplosion" + counter;
-
-    explosion.style.left = izqExplosion + "px";
-    explosion.style.top = topExplosion + "px";*/
-}
-
-/* function to create the spiderweb */
-function createSpiderweb() {
-    spider = document.getElementById("idSpider");
-    var izqSpider = spider.offsetLeft;
-    var topSpider = spider.offsetTop;
-
-    //create the bombs
-    var spiderweb = document.createElement("img");
-    spiderweb.setAttribute("src", "img/telarania.jpg");
-    spiderweb.className = "spiderweb";
-    spiderweb.id = "idSpiderweb" + counter;
-    //shoot the bomb from the position of the goblin
-    spiderweb.style.left = izqSpider + "px";
-    spiderweb.style.top = topSpider + 30 + "px";
-
-    //dropSpiderweb(spiderweb);
-}
-
-/*function dropSpiderweb(spiderweb) {
-    globin = document.getElementById("idGoblin");
-    console.log(globin);
-    //see the position of the spider en put into variable
-    var izqGlobin = globin.offsetLeft;
-    var topGlobin = globin.offsetTop;
-
-    id3 = setInterval(function() {
-        if (izqGlobin < izqSpider && topGlobin < topSpider) {
-            izqBomb--;
-            bomb.style.left = izqBomb + "px";
-        }
-
-        // si izq y top son iguales el juego a finalizado
-        if ((izqBuilding) == izqBomb) {
-            explosion(bomb, izqBomb, topBomb);
-        }
-        if (onTheTop > 100) {
-            onTheTop--;
-            spider.style.top = onTheTop + "px";
-        } else {
-            clearInterval(id3);
-        }
-    }, 5);
-}*/

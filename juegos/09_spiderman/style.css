@@ -82,8 +82,16 @@
 .bomb {
     background-image: url("img/bomb.png");
     background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+}
+
+.spiderweb {
+    background-image: url("img/telarania.jpg");
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
     position: absolute;
 }
 
@@ -91,6 +99,16 @@
     background-image: url("img/explosion.png");
     background-repeat: no-repeat;
     position: absolute;
+}
+
+.explosion-nuclear {
+    background-image: url("img/explosion-nuclear.jpg");
+    background-size: 300px 500px;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    z-index: 99999;
 }
 
 #message {
