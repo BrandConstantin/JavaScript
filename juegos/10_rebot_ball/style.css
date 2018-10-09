@@ -1,0 +1,13 @@
+#container {
+    position: absolute;
+    /*width: 98%;
+    height: 70%;*/
+    background-color: aquamarine;
+    border: 3px solid black;
+}
+
+#imgMove {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+}
