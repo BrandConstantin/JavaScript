@@ -1,0 +1,10 @@
+[
+    { "nombre": "Hotel Sol Real", "disponible": true, "precio": 223.35 },
+    { "nombre": "Apartamentos Villa Mar", "disponible": false, "precio": 123.20 },
+    { "nombre": "Hotel Mijas Palace", "disponible": true, "precio": 223.10 },
+    { "nombre": "Hostal Los Alamos", "disponible": true, "precio": 45.0 },
+    { "nombre": "Hotel Benalmadena Resort", "disponible": false, "precio": 210.90 },
+    { "nombre": "Hotel Holiday Inn", "disponible": true, "precio": 123.05 },
+    { "nombre": "Hotel Marbella Sol", "disponible": true, "precio": 323.15 },
+    { "nombre": "Hotel Fuengirola Park", "disponible": false, "precio": 223.35 }
+]

@@ -1,0 +1,30 @@
+La prueba telemática de la empresa Paraty Tech consta de 4 partes:
+
+Es importante que sigas el orden de las pruebas que te indicamos, ya que van en orden de importancia.
+
+Asimismo, cronométrate cada prueba, y cuando la termines nos indicas cuánto has tardado en cada una (sé honesto, no te preocupes por el tiempo que tardes, ten en cuenta que estamos buscando varios perfiles junior y senior. Si no consigues finalizar algunas de las pruebas, mándanos tus comentarios y explícanos dónde te has atascado).
+
+Si alguna no sabes hacerlo como te sugerimos, no importa, hazlo a tu manera. Lo importante es que sepamos si eres resolutivo.
+
+Puedes usar todo el internet que quieras (Google es nuestro amigo)
+
+La prueba 4 es opcional, es para nota ;) No te deprimas si no la sacas...
+
+
+INSTRUCCIONES:
+
+
+1. Prueba básica maquetación 
+Abrir en navegador prueba1Maquetacion.html y sigue las instrucciones.
+
+2. Prueba de programación en javascript
+Abrir en navegador prueba2javascript.html y sigue las instrucciones.
+
+3. Prueba JS avanzada y uso de librerías. 
+Abrir en navegador prueba3LibreriasJS.html y seguir las instrucciones
+
+4. Prueba Bug JS. (opcional)
+Abrir en navegador prueba4bugJS.html y seguir las instrucciones
+
+
+MUCHA SUERTE!!

@@ -1,0 +1,628 @@
+
+body {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+nav .logo {
+    height: 30px;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    filter: drop-shadow(0px 0px 2px blue);
+    padding-bottom: 30px;
+}
+
+nav ul {
+    padding: 40px;
+}
+
+nav ul li {
+    float: right;
+    display: inline;
+    color: white;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+input:focus, select:focus {
+
+    outline: none;
+}
+
+
+/* MARCO WEB */
+.borders div {
+    position: fixed;
+    background: #fff;
+    z-index: 1200;
+}
+
+.borders .bottom, .borders .top {
+    height: 15px;
+    width: 100%;
+}
+.borders .left, .borders .top {
+    top: 0;
+    left: 0;
+}
+
+.borders .left, .borders .right {
+    width: 15px;
+    height: 100%;
+}
+.borders .left, .borders .top {
+    top: 0;
+    left: 0;
+}
+
+.borders .bottom, .borders .top {
+    height: 15px;
+    width: 100%;
+}
+.borders .bottom, .borders .right {
+    bottom: 0;
+    right: 0;
+}
+
+
+
+
+.clear {
+    clear: both;
+}
+
+.show {
+    display: block!important;
+}
+
+.wrapper, .form_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.wrapper .top_content {
+    
+    width: 990px;
+}
+
+.title {
+    text-align: center;
+    color: black;
+    padding-bottom: 50px;
+}
+
+.title h1 {
+    
+    font-weight: 300;
+    font-size: 35px;
+    margin-bottom: 15px;
+    
+}
+
+.title p {
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.form_wrapper {
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+}
+
+.form_wrapper label {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #bfb98c;
+    padding-bottom: 10px;
+}
+
+.form_wrapper > div {
+    
+    width: 25%;
+    height: 70px;
+    
+    position: relative;
+}
+
+
+.form_wrapper > div > p {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 5px;
+}
+
+
+
+.date_in, .date_out, .rooms_number, .guest_select {
+    background-color: white;
+    padding: 15px;
+    outline: 1px solid #ececec;
+}
+
+/* Dates */
+.form_wrapper .date_in input, .form_wrapper .date_out input {
+
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 400;
+    height: 50px;
+    width: 100%;
+    border: none;
+    margin-top: -5px;
+    background-color: transparent;
+}
+
+
+/* Rooms */
+#room_1, #room_2, #room_3 {
+}
+
+
+
+
+
+
+.rooms_number .show_rooms .list {
+    -webkit-box-shadow: 0px 0px 26px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 26px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 26px -10px rgba(0,0,0,0.75);
+    border-radius: 0;
+    margin-top: 28px;
+    margin-left: -15px;
+
+}
+
+.show_rooms .list li {
+    display: inline;
+    width: 33%;
+    border-radius: none;
+    height: 80px!important;
+    border-left: solid 2px #ececec;
+    font-size: 1.6em;
+    padding: 15px 27px;
+    line-height: 60px;
+    color: #d4d4d4;
+ 
+}
+
+
+/* 
+.show_rooms .list li[data-value="2"] {
+    border-left: solid 2px #bfb98c;
+}
+
+.show_rooms .list li[data-value="3"] {
+    border-left: solid 2px #222045;
+}*/
+
+
+
+.guest_select {
+    position: relative;
+    cursor: pointer;
+}
+
+.guest_select #guest_select_active_area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/* ocultamos mostramos esta capa */
+.guest_select .guest_lists_wrapper {
+    display: none;
+    position: absolute;
+    width: 290px;
+    left: 0;
+    margin-top: 40px;
+
+}
+
+
+.guest_select .guest_lists_wrapper.show {
+    display: block;
+}
+
+
+.guest_select .guest_lists_wrapper > div {
+    background-color: white;
+    margin-bottom: 2px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.guest_select .guest_lists_wrapper .list_select {
+    
+    border-left: solid 1px #ececec; 
+}
+
+.guest_select .guest_lists_wrapper .list_select label {
+    padding: 5px;
+    font-size: .7em;
+}
+
+.guest_select .guest_lists_wrapper .list_select .nice-select .current {
+    
+}
+
+.guest_select .guest_lists_wrapper .list_select .nice-select.open .list {
+    width: 100%;
+}
+
+
+.guest_select .guest_lists_wrapper .list_select .nice-select.open .list li {
+    text-align: center;
+    border-left: solid 1px #ececec;  
+    color: #d0d0d0;
+    font-weight: 600;
+}
+
+.guest_select .guest_lists_wrapper .list_select .nice-select.open .list li:hover {
+    color: #222044;
+}
+
+.guest_select .guest_lists_wrapper .list_select .nice-select:after {
+    width: 5px;
+    height: 5px;
+    top: -25%;
+    border-bottom: 2px solid #bfb98c;
+    border-right: 2px solid #bfb98c;
+}
+
+
+/* promo & check button */
+.form_wrapper .promo_check {
+    display: flex;
+    align-items: stretch;
+    margin-left: 5px;
+}
+
+.form_wrapper .promo_check > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: -15px -15px -15px 0px;
+}
+
+.form_wrapper .promo_check > div > div, .form_wrapper .promo_check > div > button { 
+    height: 50%;
+   
+}
+
+.form_wrapper .promo_check .promo_code_wrapper {
+    background-color: #bfb98c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_wrapper .promo_check .promo_code_wrapper input {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+}
+
+.form_wrapper .promo_check .promo_code_wrapper input:focus {
+
+    background-color: transparent!important;
+
+}
+
+.form_wrapper .promo_check .promo_code_wrapper input::placeholder {
+    color: #222045;
+}
+
+.form_wrapper .promo_check .button_wrapper {
+    background-color: #222045;
+}
+
+.form_wrapper .promo_check button { 
+    background-color: #222045;
+    width: 100%;
+    height: 100%;
+    color: #bfb98c;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    text-align: center;
+    position: relative;
+    border-color: #222045;
+}
+
+
+.form_wrapper .promo_check button:hover { 
+    background-color: #2f2c5b;
+}
+
+
+.form_wrapper .promo_check button .send { 
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid #bfb98c;
+    border-right: 2px solid #bfb98c;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+
+
+
+
+
+
+/* 
+.guest_select .guest_lists_wrapper > div > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.guest_select .guest_lists_wrapper > div > ul > li {
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+    padding: 0;
+}*/
+
+
+
+span.arrow {
+    width: 15px;
+    height: 15px;
+    top: 18%;
+    border-bottom: 2px solid #bfb98c;
+    border-right: 2px solid #bfb98c;
+
+    content: '';
+    display: block;
+    height: 15px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 25px;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+
+span.arrow.rotate {
+    -webkit-transform-origin: 66% 66%;
+        -ms-transform-origin: 66% 66%;
+            transform-origin: 66% 66%;
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+
+/* modificaciones Nice Select */
+.nice-select {
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+
+}
+
+.nice-select .list {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.nice-select.open .list li:hover {
+    color: #d0d0d0;
+}
+
+
+.nice-select.open .list li:hover {
+    color: #222044;
+}
+
+.nice-select:after {
+    width: 15px;
+    height: 15px;
+    top: -35%;
+    border-bottom: 2px solid #bfb98c;
+    border-right: 2px solid #bfb98c;
+}
+
+.nice-select span.current {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+.option.focus, .nice-select .option.selected.focus {
+    background-color: transparent;
+    color: #222045;
+}
+
+
+
+/* modificaciones datepicker */
+.dp_paraty_skin {
+    
+}
+
+.dp_paraty_skin #ui-datepicker-div {
+    width: 300px;
+}
+
+.dp_paraty_skin .ui-widget {
+    font-family: 'Montserrat', sans-serif;
+    background: #222045;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.dp_paraty_skin .ui-datepicker {
+    padding: 0;
+}
+
+.dp_paraty_skin .ui-datepicker-header {
+    border: none;
+    background: #222045;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.dp_paraty_skin .ui-datepicker-header .ui-state-hover {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.dp_paraty_skin .ui-datepicker .ui-datepicker-title {
+    margin-top: .4em;
+    margin-bottom: .3em;
+    color: #bfb98c;
+}
+
+.dp_paraty_skin .ui-datepicker .ui-datepicker-prev-hover,
+.dp_paraty_skin .ui-datepicker .ui-datepicker-next-hover,
+.dp_paraty_skin .ui-datepicker .ui-datepicker-next,
+.dp_paraty_skin .ui-datepicker .ui-datepicker-prev {
+    top: .9em;
+    border:none;
+}
+
+.dp_paraty_skin .ui-datepicker .ui-datepicker-prev-hover {
+    left: 2px;
+}
+
+.dp_paraty_skin .ui-datepicker .ui-datepicker-next-hover {
+    right: 2px;
+}
+
+.dp_paraty_skin .ui-datepicker .ui-datepicker-next span,
+.dp_paraty_skin .ui-datepicker .ui-datepicker-prev span {
+    background-image: url(images/ui-icons_ffffff_256x240.png);
+    background-position: -32px 0;
+    margin-top: 0;
+    top: 0;
+    font-weight: normal;
+}
+
+.dp_paraty_skin .ui-datepicker .ui-datepicker-prev span {
+    background-position: -96px 0;
+}
+
+.dp_paraty_skin .ui-datepicker table {
+    margin: 0;
+    background-color: #222045;
+}
+
+.dp_paraty_skin .ui-datepicker th {
+    padding: 1em 0;
+    color: #bfb98c;
+    font-size: 13px;
+    font-weight: normal;
+    border: none;
+    border-top: 1px solid #3a414d;
+}
+
+.dp_paraty_skin .ui-datepicker td {
+    background: #bfb98c;
+    border: none;
+    padding: 0;
+}
+
+.dp_paraty_skin td .ui-state-default {
+    background: transparent;
+    border: none;
+    text-align: center;
+    padding: .5em;
+    margin: 0;
+    font-weight: normal;
+    color: #efefef;
+    font-size: 16px;
+}
+
+.dp_paraty_skin .ui-state-disabled  {
+    opacity: 1;
+}
+
+.dp_paraty_skin .ui-state-disabled .ui-state-default {
+    color: #222045;
+}
+
+.dp_paraty_skin td .ui-state-active,
+.dp_paraty_skin td .ui-state-hover {
+    background: #222045;
+    color: #bfb98c;
+}
+/* modificaciones datepicker */
+
+
+/* este input no tengo muy claro para que sirve y es el Ãºnico al que he copiado los estilos */
+.selectricInput {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    outline: none !important;
+    border: none !important;
+    background: none !important;
+}
+

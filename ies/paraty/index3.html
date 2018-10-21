@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/nice-select.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="css/booking-widget-styles.css" />
+    <!-- <link rel="stylesheet" href="css/mystyle.css"> -->
+    <title>Prueba 3 Entrevista Paraty</title>
+</head>
+
+<body>
+    <div class="borders displayed">
+        <div class="top"></div>
+        <div class="left"></div>
+        <div class="bottom"></div>
+        <div class="right"></div>
+    </div>
+    <div class="wrapper">
+
+        <nav>
+            <img class="logo" src="images/logo.png" alt="">
+            <ul>
+                <li>The Hotel</li>
+                <li>Rooms</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <div class="top_content">
+            <div class="title">
+                <h1>PRUEBA BUSCADOR</h1>
+                <p>
+                    <b>1. Datepickers:</b> <br> Cambiar el formato de las fechas para que funcione el buscador. debe ser Día, mes año.<br> Cuidado al cambiar de fechas, ya que por defecto sale en formato inglés: Investiga el uso de la librería "js/jquery-ui.js"
+                    para cambiar el formato a la fecha.
+
+                    <br><br><br><br>
+
+
+                    <b>2. Select de ocupaciones de habitaciones::</b> <br> sólo mostrar la ocupación del número de habitaciones que hayas elegido<br><br> Si te fijas, siempre que abres el selector de ocupación (guest), salen 3 opciones. Deben salir las
+                    que se indiquen en el selector de habitaciones (room)
+
+
+                    <br><br> En esta prueba puedes cambiar lo que quieras (CSS, HTML, JS... )!!
+
+
+                </p>
+            </div>
+            <form class="booking_form booking-form-center-text paraty-booking-form" action="http://5-dot-test-hotel.appspot.com/booking1" method="post">
+                <input type="hidden" id="language" name="language" value="SPANISH">
+                <input type="hidden" id="agesKid1" name="agesKid1">
+                <input type="hidden" id="agesKid2" name="agesKid2">
+                <input type="hidden" id="agesKid3" name="agesKid3">
+                <input type="hidden" id="kidsToAdult" name="kidsToAdult">
+                <input id="roomType" type="hidden" name="roomType" value="">
+                <input class="roomTypeValue" type="hidden" name="roomTypeValue" value="">
+                <input id="roomFilter" type="hidden" name="roomFilter" value=".*">
+                <input id="roomFilterName" type="hidden" name="roomFilterName" value="">
+                <input type="hidden" id="roomtype_list_json" name="roomtype_list_json" value="">
+                <input type="hidden" id="namespace" name="namespace" value="demo5">
+                <input type="hidden" id="gclid" name="gclid" value="">
+                <input type="hidden" value="" name="priceSeekerHotel" id="priceSeekerHotel">
+
+                <div class="form_wrapper animated fadeIn">
+                    <div class="date_in">
+                        <label>Check-IN</label>
+                        <input name="startDate" id="date_in" type="text" value="12/15/2018">
+                    </div>
+
+                    <div class="date_out">
+                        <label>Check-OUT</label>
+                        <input name="endDate" id="date_out" type="text" value="12/18/2018">
+                    </div>
+
+                    <script>
+                        departure_date_selectable = true;
+                    </script>
+
+                    <div class="rooms_number">
+                        <label for="">Rooms</label>
+                        <select name="numRooms" class="show_rooms">
+                                <option data-id="1" value="1">1</option>
+                                <option data-id="2" value="2">2</option>
+                                <option data-id="3" value="3">3</option>
+                            </select>
+                        <input type="text" class="selectricInput">
+                    </div>
+
+                    <div class="guest_select">
+                        <div id="guest_select_active_area"></div>
+                        <span class="arrow"></span>
+                        <label for="">Guest</label>
+                        <p><span>Select</span></p>
+                        <div class="guest_lists_wrapper animated fadeIn">
+
+                            <!-- ROOM 1 -->
+                            <div class="room_wrapper_1" id="room_1">
+                                <div class="list_select">
+                                    <label for="">Adultos</label>
+                                    <select name="adultsRoom1" class="adultos_1">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                        </select>
+                                </div>
+                                <div class="list_select">
+                                    <label for="">Niños</label>
+                                    <select name="childrenRoom1" class="ninos_1">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                </div>
+                                <div class="list_select">
+                                    <label for="">Bebes</label>
+                                    <select id="hab1_bebes" name="babiesRoom1" class="bebes_1">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                </div>
+                                <div class="clear"></div>
+                                <input type="text" class="selectricInput">
+                            </div>
+                            <!-- END ROOM 1 -->
+
+                            <!-- ROOM 2 -->
+                            <div class="room_wrapper_2" id="room_2">
+                                <div class="list_select">
+                                    <label for="">Adultos</label>
+                                    <select name="adultsRoom2" class="adultos_2">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                        </select>
+                                </div>
+                                <div class="list_select">
+                                    <label for="">Niños</label>
+                                    <select name="childrenRoom2" class="ninos_2">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                </div>
+                                <div class="list_select">
+                                    <label for="">Bebes</label>
+                                    <select id="hab2_bebes" name="babiesRoom2" class="bebes_2">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                </div>
+                                <div class="clear"></div>
+                                <input type="text" class="selectricInput">
+                            </div>
+                            <!-- END ROOM 2 -->
+
+                            <!-- ROOM 3 -->
+                            <div class="room_wrapper_3" id="room_3">
+                                <div class="list_select">
+                                    <label for="">Adultos</label>
+                                    <select name="adultsRoom3" class="adultos_3">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                        </select>
+                                </div>
+                                <div class="list_select">
+                                    <label for="">Niños</label>
+                                    <select name="childrenRoom3" class="ninos_3">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                </div>
+                                <div class="list_select">
+                                    <label for="">Bebes</label>
+                                    <select id="hab3_bebes" name="babiesRoom3" class="bebes_3">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                </div>
+                                <div class="clear"></div>
+                                <input type="text" class="selectricInput">
+                            </div>
+                            <!-- END ROOM 3 -->
+
+                        </div>
+                    </div>
+                    <div class="promo_check">
+                        <div>
+                            <div class="promo_code_wrapper">
+                                <input type="text" name="promocode" placeholder="PROMOCODE"></input>
+                            </div>
+                            <div class="button_wrapper">
+                                <button type="submit" onclick="$(this).css('display','none');bookingSearchWithAgeSelection();return false;" class="check_button_wrapper">CHECK
+                                        <i class="send"></i>
+                                    </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="booking-search-popup" name="booking-search-popup" value="true">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/nice-select.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
