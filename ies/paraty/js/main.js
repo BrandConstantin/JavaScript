@@ -1,20 +1,9 @@
 $.datepicker.regional['es'] = {
-    /*closeText: 'Cerrar',
-    prevText: '< Ant',
-    nextText: 'Sig >',
-    currentText: 'Hoy',
-    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-    monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
-    dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
-    weekHeader: 'Sm',*/
+
     dateFormat: 'dd/mm/yy'
-        /*firstDay: 1,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: ''*/
+
 };
+
 $.datepicker.setDefaults($.datepicker.regional['es']);
 
 $(document).ready(function() {
@@ -51,7 +40,8 @@ $(document).ready(function() {
     $('select').niceSelect();
 
     // better
-    var today = new Date();
+    var date = new Date();
+    var today = date.getDay() - 2;
     var tomorrow = today + 1;
     $("#date_in").datepicker({
         inline: true,
@@ -59,13 +49,14 @@ $(document).ready(function() {
 
         minDate: today,
         ignoreReadonly: true,
-        defaultDate: tomorrow,
+        //defaultDate: tomorrow,
         useCurrent: false
     })
 
     $("#date_out").datepicker({
         inline: true,
-        showOtherMonths: true
+        showOtherMonths: true,
+        minDate: tomorrow
     })
 
     .datepicker('widget').wrap('<div class="dp_paraty_skin"/>');
