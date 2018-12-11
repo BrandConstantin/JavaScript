@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Buenas practicas con JavaScript</title>
+</head>
+
+<body>
+    <button id="btnSaludar">Saludar</button>
+    <script>
+        var tienda = {
+            nombre: "Tienda las 4 esquinas",
+            calcular: function(costo1, costo2) {
+                return costo1 + costo2;
+            },
+            saludar: function() {
+                var mensaje = "Hola ";
+                return mensaje;
+            }
+        };
+
+
+        console.log(tienda.nombre);
+        console.log(tienda.calcular(20, 32));
+        console.log(tienda.saludar());
+
+        var btnSaludar = document.getElementById("btnSaludar");
+
+        btnSaludar.addEventListener('click', function() {
+            console.log(tienda.saludar());
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Persona() {
+            //propriedades públicas
+            this.dni = '6465456j';
+            this.nombre = 'Juan Jesús';
+        }
+
+        var yo = new Persona();
+        var tu = new Persona();
+
+        tu.dni = '4532342s';
+        tu.nombre = "Maria";
+
+        tu['nombre'] = 'Valerio';
+
+        console.log(yo);
+        console.log(tu);
+
+        //es mejor iniciar las propriedades ya que se les asigna memoria
+        //de esta forma
+        function Animal(edad, tipo) {
+            //propriedades públicas
+            this.edad = edad;
+            this.tipo = tipo;
+        }
+
+        var leon = new Animal('2', 'Leon');
+        var aguila = new Animal(1, 'Aguila');
+
+        console.log(leon);
+        console.log(aguila);
+    </script>
+</body>
+
+</html>

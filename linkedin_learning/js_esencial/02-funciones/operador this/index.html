@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="boton">
+        Da click para obtener el contenido
+    </button>
+    <script>
+        //*** Uso del operador this
+
+        const boton = document.querySelector('.boton');
+
+        /*boton.addEventListener('click', function() {
+            console.log("Boton pulsado");
+        })
+
+        //para que se vea solo el texto
+        boton.addEventListener('click', function() {
+            console.log(this.innerHTML);
+        })
+
+        boton.addEventListener('click', () => {
+            console.log(this)
+        })*/
+
+        boton.addEventListener('click', () => {
+            console.log(this)
+            this.location = "http://www.google.com";
+
+        })
+    </script>
+</body>
+
+</html>

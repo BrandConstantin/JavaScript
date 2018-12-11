@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Buenas practicas con JavaScript</title>
+</head>
+
+<body>
+
+    <script>
+        var persona = {
+            nombre: "Sergio",
+            email: "sergiobritor@gmail.com",
+            twitter: "yacafx",
+            saludar: function() {
+                return "Hola mundo"
+            }
+        }
+
+        var dato = "";
+
+        for (dato in persona) {
+            console.log(dato, persona[dato]);
+        }
+    </script>
+</body>
+
+</html>

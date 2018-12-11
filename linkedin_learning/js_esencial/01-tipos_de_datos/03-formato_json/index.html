@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+
+        var persona = {
+            nombre: "alex",
+            twitter: "alex08f"
+        };
+        console.log(persona);
+
+        var personas = [{
+            nombre: "andrea",
+            twitter: "andr3a"
+        }, {
+            nombre: "almudena",
+            twitter: "altamudenga"
+        }, {
+            nombre: "balint",
+            twitter: "balinton45"
+        }];
+        console.log(personas);
+
+        //convertirlos en formato json
+        var personaJSON = JSON.stringify(persona);
+        var personasJSON = JSON.stringify(personas);
+
+        console.log(personaJSON);
+        console.log(personasJSON);
+
+        //cuando se extraen del servidor en formato json
+        // y se reconvierte en formato js
+        var nuevaPersona = JSON.parse(personaJSON);
+        console.log(nuevaPersona);
+    </script>
+</body>
+
+</html>

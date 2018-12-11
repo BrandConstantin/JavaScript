@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(Math.PI);
+
+        function Convertidor() {
+
+        }
+
+        Convertidor.GRADOS_A_RADIALES = Math.PI / 180;
+        Convertidor.RADIALES_A_GRADOS = 180 / Math.PI;
+
+        //añadir métodos estaticos
+        Convertidor.eRadianes = function(grados) {
+            return grados * Convertidor.GRADOS_A_RADIALES;
+        }
+
+        Convertidor.eGrados = function(radianes) {
+            return radianes * Convertidor.RADIALES_A_GRADOS;
+        }
+
+        console.log('180 grados son: ' + Convertidor.eRadianes(180) + ' radianes');
+        console.log('2PI radianes son: ' + Convertidor.eGrados(2 * Math.PI) + ' grados');
+    </script>
+</body>
+
+</html>

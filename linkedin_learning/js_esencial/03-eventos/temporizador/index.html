@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+
+        //se ejecuta continuamente
+        var temporizador = setInterval(function() {
+            setColor();
+        }, 2000);
+
+
+        //se ejecuta una sola vez
+        //setTimeout(function() {
+        //    setColor();
+        //}, 3000);
+
+        function setColor() {
+            var pagina = document.body;
+            pagina.style.backgroundColor = pagina.style.backgroundColor == "blue" ? "green" : "blue";
+        }
+
+        function stopChangeColor() {
+            clearInterval(temporizador)
+        }
+    </script>
+</body>
+
+</html>
