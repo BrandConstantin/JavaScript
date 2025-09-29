@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="fecha-hora.js"></script>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<h1>Display fecha y hora</h1>
+	<button type="button" onclick="document.getElementById('fecha').innerHTML = Date()">Mostrar fecha/hora</button>
+	<p id="fecha"></p>
+
+	<hr>
+	<h1>getElementById</h1>
+	<p id="changeHTML">JavaScript puede cambiar el contenido del HTML.</p>
+	<button type="button" onclick="document.getElementById('changeHTML').innerHTML = 'Texto cambiado!'">Pinchame!</button>
+
+	<hr>
+	<h1>getElementById</h1>
+	<p>JavaScript puede cambiar los atributos HTML, en este caso el atributo src.</p>
+	<button onclick="document.getElementById('changeImg').src='../img/bulb1.png'">Bombilla 1</button>
+	<img id="changeImg" src="../img/bulb1.png" style="width:80px">
+	<button onclick="document.getElementById('changeImg').src='../img/bulb2.png'">Bombilla 2</button>
+
+	<hr>
+	<h1>getElementById</h1>
+	<p id="changeStyle">JavaScript también puede cambiar el estilo de un elemento HTML.</p>
+	<button type="button" onclick="document.getElementById('changeStyle').style.fontSize='25px'">Pinchame!</button>
+
+	<hr>
+	<h1>getElementById</h1>
+	<p id="dontShow">JavaScript no mostrar un elemento HTML.</p>
+	<button type="button" onclick="document.getElementById('dontShow').style.display='none'">Pinchame!</button>
+
+	<hr>
+	<h1>getElementById</h1>
+	<p>JavaScript mostrar un elemento HTML.</p>
+	<p id="showElem" style="display:none">Hola!</p>
+	<button type="button" onclick="document.getElementById('showElem').style.display='block'">Pinchame!</button>
+</body>
+</html> 
