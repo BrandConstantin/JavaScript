@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="BrandConstantin">
+        <meta name="description" content="Carrera coches">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script type="text/javascript" src="script.js"></script>
+        <title>Carrera Coches</title>
+    </head>
+    <body>
+    <div id="barra">
+        <button id="mover" onclick="mover()">Correr</button>
+        <button id="reanudar" onclick="reanudar()">Reanudar</button>
+        <div id="disponible">€ disponible: 500</div>
+    </div> 
+    <div id="resultado"> ¿QUIEN GANARA? </div>
+    <div id ="container"></div>
+    <div id="barraApuesta">
+        <div id="apuesta">
+            <h1>Apuesta!!</h1>
+            <form action="#">
+                <p> Por favor elija el número de participantes en la carrera de 2 a 6:  
+                    <input type="number" id="participantes" min="2" max="6" required autofocus></p>
+                <p>Apuesta por: 
+                    <select id="cocheElegido">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select></p>
+                <p>Cantidad a apostar:  
+                    <input type="number" id="apuesta" required></p> 
+                <input type="submit" onclick="genera()" value="Apuesta" id="ok">
+            </form>
+        </div>      
+    </div>
+    </body>
+</html>
